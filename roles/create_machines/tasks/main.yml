@@ -1,2 +1,19 @@
 ---
 # tasks file for create_machines
+
+- name: Create the basic machines
+  os_server:
+    state: present
+    name: '{{ item.machinename}}'
+    image: '{{ image_id }}'
+    key_name: MARTHY-T430-WIN
+    timeout: 200
+    flavor: '{{ flavor_id }}'
+    auto_floating_ip: yes
+    security_groups: default
+    nics:
+      - net-id: '{{ network_id }}'
+    meta:
+      hostname: "{{ item.hostname}}"
+  with_items:
+    - '{{ machines }}'

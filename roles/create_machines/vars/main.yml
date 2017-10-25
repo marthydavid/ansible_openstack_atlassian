@@ -1,2 +1,6 @@
 ---
 # vars file for create_machines
+machines:
+  - {machinename: jira, hostname: centos-jira.marthyhome.lab}
+  - {machinename: bamboo, hostname: centos-bamboo.marthyhome.lab}
+  - {machinename: bitbucket, hostname: centos-bitbucket.marthyhome.lab}
