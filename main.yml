@@ -1,0 +1,6 @@
+---
+
+- hosts: localhost
+  become: no
+  roles:
+    - create_machines

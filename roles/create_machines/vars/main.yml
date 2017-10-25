@@ -1,6 +1,6 @@
 ---
 # vars file for create_machines
 machines:
-  - {machinename: jira, hostname: centos-jira.marthyhome.lab}
-  - {machinename: bamboo, hostname: centos-bamboo.marthyhome.lab}
-  - {machinename: bitbucket, hostname: centos-bitbucket.marthyhome.lab}
+  - {machinename: jira, hostname: centos-jira.marthyhome.lab, floating_ips: 192.168.1.201}
+  - {machinename: bamboo, hostname: centos-bamboo.marthyhome.lab, floating_ips: 192.168.1.202}
+  - {machinename: bitbucket, hostname: centos-bitbucket.marthyhome.lab, floating_ips: 192.168.1.203}

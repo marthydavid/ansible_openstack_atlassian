@@ -9,7 +9,7 @@
     key_name: MARTHY-T430-WIN
     timeout: 200
     flavor: '{{ flavor_id }}'
-    auto_floating_ip: yes
+    flotaing_ips: '{{ item.floating_ips }}'
     security_groups: default
     nics:
       - net-id: '{{ network_id }}'
