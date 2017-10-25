@@ -1,0 +1,11 @@
+---
+
+- name: recover JAVA_HOME
+  shell: "java -XshowSettings 2>&1 |awk '/java.home/ { print $3 }'"
+  changed_when: false
+  register: javasettings
+- debug: var=javasettings.stdout
+
+- name: set java_home
+  set_fact:
+    java_home: "{{ javasettings.stdout | default('') }}/.."

@@ -1,0 +1,8 @@
+---
+# tasks file for jira (CentOS specific)
+
+- name: Ensure network tools are present (serverspec testing)
+  package:
+    name: iproute
+    state: present
+  when: jira_testing
