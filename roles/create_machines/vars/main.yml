@@ -2,5 +2,5 @@
 # vars file for create_machines
 machines:
   - {machinename: jira, hostname: centos-jira.marthyhome.lab, floating_ips: 192.168.1.204, flavor_id: 3f5ab789-78d4-44a2-a0f1-e87b7aaac283}
-  - {machinename: bamboo, hostname: centos-bamboo.marthyhome.lab, floating_ips: 192.168.1.205, flavor_id: 3f5ab789-78d4-44a2-a0f1-e87b7aaac283}
+  - {machinename: bamboo, hostname: centos-bamboo.marthyhome.lab, floating_ips: 192.168.1.205, flavor_id: 6c781e73-641b-4dd4-9b12-fa500ebe4bc5}
   - {machinename: bitbucket, hostname: centos-bitbucket.marthyhome.lab, floating_ips: 192.168.1.206, flavor_id: 6c781e73-641b-4dd4-9b12-fa500ebe4bc5}

@@ -12,6 +12,7 @@
     floating_ips: 
       - '{{ item.floating_ips }}'
     security_groups: default
+    boot_from_volume: True
     nics:
       - net-id: '{{ network_id }}'
     meta:
