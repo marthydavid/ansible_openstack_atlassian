@@ -1,6 +1,0 @@
----
-
-- hosts: vagrantselect
-  roles:
-    - kbrebanov.jira
-
