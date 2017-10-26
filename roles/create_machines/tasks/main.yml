@@ -8,7 +8,7 @@
     image: '{{ image_id }}'
     key_name: MARTHY-T430-WIN
     timeout: 200
-    flavor: '{{ flavor_id }}'
+    flavor: '{{ item.flavor_id }}'
     floating_ips: 
       - '{{ item.floating_ips }}'
     security_groups: default
