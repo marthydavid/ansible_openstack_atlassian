@@ -8,8 +8,8 @@
     display_name: '{{ item.machinename }}'
     wait: yes
     register: '{{ item.volume }}'
-    with_items:
-      - '{{ machines }}'
+  with_items:
+    - '{{ machines }}'
 
 - name: Create the basic machines
   os_server:
