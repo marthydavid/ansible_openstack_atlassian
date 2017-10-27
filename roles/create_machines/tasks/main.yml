@@ -5,27 +5,27 @@
     state: present
     image: '{{ image_id }}'
     size: 20
-    display_name: '{{ item.machinename }}'
     wait: yes
   with_items:
     - '{{ machines }}'
+  register: volumes
 
-- name: Create the basic machines
-  os_server:
-    state: present
-    name: '{{ item.machinename}}'
-    image: '{{ image_id }}'
-    key_name: MARTHY-T430-WIN
-    wait: yes
-    flavor: '{{ item.flavor_id }}'
-    floating_ips: 
-      - '{{ item.floating_ips }}'
-    security_groups: default
-    boot_from_volume: True
-    boot_volume: '{{ item.machinename }}'
-    nics:
-      - net-id: '{{ network_id }}'
-    meta:
-      hostname: "{{ item.hostname}}"
-  with_items:
-    - '{{ machines }}'
+#- name: Create the basic machines
+#  os_server:
+#    state: present
+#    name: '{{ item.machinename}}'
+#    image: '{{ image_id }}'
+#    key_name: MARTHY-T430-WIN
+#    wait: yes
+#    flavor: '{{ item.flavor_id }}'
+#    floating_ips: 
+#      - '{{ item.floating_ips }}'
+#    security_groups: default
+#    boot_from_volume: True
+#    boot_volume: '{{ item.machinename }}'
+#    nics:
+#      - net-id: '{{ network_id }}'
+#    meta:
+#      hostname: "{{ item.hostname}}"
+#  with_items:
+#    - '{{ machines }}'
