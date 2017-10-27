@@ -1,5 +1,15 @@
 ---
 # tasks file for create_machines
+- name: create volumes for machines
+  os_volume:
+    state: present
+    image: '{{ image_id }}'
+    size: 20
+    display_name: '{{ item.machinename }}'
+    wait: yes
+    register: '{{ item.volume }}'
+    with_items:
+      - '{{ machines }}'
 
 - name: Create the basic machines
   os_server:
@@ -7,13 +17,13 @@
     name: '{{ item.machinename}}'
     image: '{{ image_id }}'
     key_name: MARTHY-T430-WIN
-    timeout: 200
+    wait: yes
     flavor: '{{ item.flavor_id }}'
     floating_ips: 
       - '{{ item.floating_ips }}'
     security_groups: default
     boot_from_volume: True
-    volume_size: 20
+    boot_volume: '{{ item.machinename }}'
     nics:
       - net-id: '{{ network_id }}'
     meta:
