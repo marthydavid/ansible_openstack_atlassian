@@ -13,6 +13,7 @@
       - '{{ item.floating_ips }}'
     security_groups: default
     boot_from_volume: True
+    volume_size: 20
     nics:
       - net-id: '{{ network_id }}'
     meta:
