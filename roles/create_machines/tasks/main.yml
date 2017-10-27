@@ -2,7 +2,7 @@
 # tasks file for create_machines
 - name: Create the basic machines
   os_server:
-    state: present
+    state: '{{ item.state }}'
     name: '{{ item.machinename}}'
     image: '{{ image_id }}'
     key_name: MARTHY-T430-WIN
