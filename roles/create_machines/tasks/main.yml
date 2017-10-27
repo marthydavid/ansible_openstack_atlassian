@@ -5,6 +5,7 @@
     state: present
     image: '{{ image_id }}'
     size: 20
+    display_name: '{{ itme.machinename }}-{{ item.hostname }}'
     wait: yes
   with_items:
     - '{{ machines }}'
