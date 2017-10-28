@@ -15,5 +15,6 @@
       - net-id: '{{ network_id }}'
     meta:
       hostname: "{{ item.hostname}}"
+      AGGREG: "{{ item.aggreg }}"
   with_items:
     - '{{ machines }}'
