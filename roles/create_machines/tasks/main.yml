@@ -12,7 +12,7 @@
       - '{{ item.floating_ips }}'
     security_groups: default
     nics:
-      - net-id: '{{ network_id }}'
+      - net-id: '{{ item.network_id }}'
     meta:
       hostname: "{{ item.hostname}}"
       AGGREG: "{{ item.aggreg }}"
