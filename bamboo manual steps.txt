@@ -3,7 +3,7 @@ useradd --create-home -c "Bamboo role account" bamboo
 mkdir -p /opt/atlassian/bamboo
 mkdir -p /var/atlassian/application/bamboo
 chown bamboo: /var/atlassian/application/bamboo/
-cp /home/centos/atlassian-bamboo-6.2.2.tar.gz /opt/atlassian/bamboo/ -f
+cp /root/atlassian-bamboo-6.2.2.tar.gz /opt/atlassian/bamboo/ -f
 chown -R bamboo: /opt/atlassian/bamboo
 su - bamboo
 cd /opt/atlassian/bamboo
