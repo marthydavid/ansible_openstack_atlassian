@@ -4,4 +4,4 @@ machines:
 #  - {machinename: jira, hostname: centos-jira.marthyhome.lab, aggreg: b, floating_ips: 192.168.1.204, flavor_id: 6c781e73-641b-4dd4-9b12-fa500ebe4bc5, network_id: c10883fd-911c-477b-9380-2c502672a24a, state: present}
 #  - {machinename: bamboo, hostname: centos-bamboo.marthyhome.lab, aggreg: b, floating_ips: 192.168.1.205, flavor_id: 6c781e73-641b-4dd4-9b12-fa500ebe4bc5, network_id: c10883fd-911c-477b-9380-2c502672a24a, state: present}
 #  - {machinename: bitbucket, hostname: centos-bitbucket.marthyhome.lab, aggreg: b, floating_ips: 192.168.1.206, flavor_id: 6c781e73-641b-4dd4-9b12-fa500ebe4bc5, network_id: c10883fd-911c-477b-9380-2c502672a24a, state: present}
-  - {machinename: jira, hostname: centos-jira.marthyhome.lab, floating_ips: 192.168.1.208, aggreg: A, flavor_id: '{{ flavor_id }}', network_id: '{{ network_id }}', state: present}
+  - {machinename: jira, hostname: centos-jira.marthyhome.lab, floating_ips: 192.168.1.207, flavor_id: '{{ flavor_id }}', network_id: '{{ network_id }}', state: present}
