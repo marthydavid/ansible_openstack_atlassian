@@ -1,6 +1,6 @@
 ---
 # defaults file for create_machines
 
-flavor_id: 3f5ab789-78d4-44a2-a0f1-e87b7aaac283
-image_id: 10aa73fd-c9c0-439f-ae55-ba189306102c
-network_id: c10883fd-911c-477b-9380-2c502672a24a
+flavor_id: ec614d76-3952-4572-b93d-0a08cbb785cc
+image_id: d011bd91-d820-4438-8933-745a42a8322c
+network_id: 6c2e4236-1795-4709-b2b1-5e261702468f
