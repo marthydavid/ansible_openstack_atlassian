@@ -7,6 +7,6 @@
 
 - hosts: centos-ansible
   become: no
-  ansible_user: centos
+  remote_user: centos
   roles:
     - ansible_ping
