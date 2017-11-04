@@ -1,0 +1,4 @@
+---
+
+- name: ping the ansible-machine
+  ping:

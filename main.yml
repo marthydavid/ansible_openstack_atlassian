@@ -4,3 +4,9 @@
   become: no
   roles:
     - create_machines
+
+- hosts: centos-ansible
+  become: no
+  ansible_user: centos
+  roles:
+    - ansible_ping
