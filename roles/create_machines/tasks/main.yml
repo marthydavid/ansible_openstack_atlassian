@@ -15,5 +15,6 @@
       - net-id: '{{ item.network_id }}'
     meta:
       hostname: "{{ item.hostname}}"
+      tag: "{{ item.tag }}"
   with_items:
     - '{{ machines }}'
