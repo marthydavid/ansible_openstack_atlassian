@@ -13,6 +13,11 @@
     shell: /bin/bash
     createhome: yes
 
+- name: stat /opt/atlassian/bamboo/atlassian-bamboo-6.2.2
+  stat:
+    path: /opt/atlassian/bamboo/atlassian-bamboo-6.2.2
+  register: bamboo_path
+
 - name: create bamboo app direcotry
   file: 
     path: /opt/atlassian/bamboo
@@ -34,6 +39,7 @@
     src: /home/centos/bamboo.tar.gz
     dest: /opt/atlassian/bamboo/
     remote_src: yes
+  when: bamboo_path.stat.exists == False
 
 - name: create link for current
   file:
