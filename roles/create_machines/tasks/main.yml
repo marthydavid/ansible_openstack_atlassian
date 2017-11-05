@@ -5,7 +5,7 @@
     state: '{{ item.state }}'
     name: '{{ item.machinename}}'
     image: '{{ image_id }}'
-    key_name: MARTHY-T430-WIN
+    key_name: MARTHY-T430
     wait: yes
     flavor: '{{ item.flavor_id }}'
     floating_ips: 
