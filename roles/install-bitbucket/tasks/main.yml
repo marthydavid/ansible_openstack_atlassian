@@ -2,5 +2,5 @@
 - name: get bitbucket package
   get_url:
     url: '{{ bitbucket_link }}'
-    path: /home/centos/bitbucket.bin
+    dest: /home/centos/bitbucket.bin
     mode: 0777
