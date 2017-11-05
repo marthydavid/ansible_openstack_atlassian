@@ -34,7 +34,7 @@
     src: /home/centos/bamboo.tar.gz
     dest: /opt/atlassian/bamboo/
     remote_src: yes
-    
+
 - name: create link for current
   file:
     src: /opt/atlassian/bamboo/atlassian-bamboo-6.2.2
@@ -62,6 +62,7 @@
 - name: check bamboo service
   command: chkconfig --list bamboo
   register: chkconfig_list
+  ignore_errors: True
 
 - name: create bamboo service
   command: chkconfig --add bamboo
