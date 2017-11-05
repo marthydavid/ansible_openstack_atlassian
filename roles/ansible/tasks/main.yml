@@ -16,11 +16,16 @@
   with_items:
     - '{{ packages }}'
 
+- name: query shade
+  stat:
+    path: /usr/lib/python2.7/site-packages/shade
+  register: shade
+
 - name: install shade with pip
   pip:
     name: '{{ item.name }}'
   with_items:
     - '{{ pip_packages }}'
-  when: pip.stat.exists
+  when: pip.stat.exists and shade.stat.exists == False
 
   
