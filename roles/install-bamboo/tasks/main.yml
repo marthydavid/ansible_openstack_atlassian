@@ -67,11 +67,11 @@
   command: chkconfig --list bamboo
   register: chkconfig_list
   ignore_errors: True
-  tag: something
+  tags: something
 
 - debug:
     var: chkconfig_list.stdout
-  tag: something
+  tags: something
 
 - name: create bamboo service
   command: chkconfig --add bamboo
