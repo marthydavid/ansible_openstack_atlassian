@@ -2,6 +2,6 @@
 # vars file for create_machines
 machines:
   - {machinename: centos-ansible, hostname: centos-ansible.marthyhome.lab, floating_ips: 192.168.1.202, flavor_id: '{{ atlassian_agent_small_flavor_id }}', network_id: '{{ network_id }}', state: present, tag: agent}
-  - {machinename: centos-bamboo, hostname: centos-bamboo.marthyhome.lab, floating_ips: 192.168.1.205, flavor_id: '{{ atlassian_small_flavor_id }}', network_id: '{{ network_id }}', state: present, tag: bamboo}
-  - {machinename: centos-bitbucket, hostname: centos-bitbucket.marthyhome.lab, floating_ips: 192.168.1.206, flavor_id: '{{ atlassian_small_flavor_id }}', network_id: '{{ network_id }}', state: present, tag: bitbucket}
-  - {machinename: centos-jira, hostname: centos-jira.marthyhome.lab, floating_ips: 192.168.1.207, flavor_id: '{{ atlassian_small_flavor_id }}', network_id: '{{ network_id }}', state: present, tag: jira}
+  - {machinename: centos-bamboo, hostname: centos-bamboo.marthyhome.lab, floating_ips: 192.168.1.203, flavor_id: '{{ atlassian_small_flavor_id }}', network_id: '{{ network_id }}', state: present, tag: bamboo}
+  - {machinename: centos-bitbucket, hostname: centos-bitbucket.marthyhome.lab, floating_ips: 192.168.1.204, flavor_id: '{{ atlassian_small_flavor_id }}', network_id: '{{ network_id }}', state: present, tag: bitbucket}
+  - {machinename: centos-jira, hostname: centos-jira.marthyhome.lab, floating_ips: 192.168.1.205, flavor_id: '{{ atlassian_small_flavor_id }}', network_id: '{{ network_id }}', state: present, tag: jira}

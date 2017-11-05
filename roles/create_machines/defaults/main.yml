@@ -1,7 +1,7 @@
 ---
 # defaults file for create_machines
 
-atlassian_small_flavor_id: ec614d76-3952-4572-b93d-0a08cbb785cc
-atlassian_agent_small_flavor_id: 62a25aac-a949-4373-b9fc-cc19c2dd3bab
-image_id: d011bd91-d820-4438-8933-745a42a8322c
-network_id: 6c2e4236-1795-4709-b2b1-5e261702468f
+atlassian_small_flavor_id: 88a3a24b-216e-4c58-8419-904daef54238
+atlassian_agent_small_flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9
+image_id: a31d87ae-d711-4931-9046-bd334d3e26f5
+network_id: c8dc319e-8927-4e3d-9626-c1864161726a
