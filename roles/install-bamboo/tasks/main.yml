@@ -67,6 +67,7 @@
   command: chkconfig --list bamboo
   register: chkconfig_list
   ignore_errors: True
+  changed_when: False
 
 
 - name: create bamboo service
