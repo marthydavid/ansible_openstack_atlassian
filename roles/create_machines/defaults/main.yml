@@ -9,9 +9,9 @@ jira_link: https://www.atlassian.com/software/jira/downloads/binary/atlassian-ji
 bamboo_link: https://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-6.2.2.tar.gz
 bitbucket_link: https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-5.5.0-x64.bin
 prereq_packages:
-  - { name: epel-release, state: latest}
-  - { name: "https://centos7.iuscommunity.org/ius-release.rpm", state: latest}
-  - { name: git2u, state: latest}
-  - { name: python-devel, state: latest}
-  - { name: vim, state: latest}
-  - { name: java-1.8.0-openjdk, state: latest}
+  - { name: epel-release, state: present}
+  - { name: "https://centos7.iuscommunity.org/ius-release.rpm", state: present}
+  - { name: git2u, state: present}
+  - { name: python-devel, state: present}
+  - { name: vim, state: present}
+  - { name: java-1.8.0-openjdk, state: present}

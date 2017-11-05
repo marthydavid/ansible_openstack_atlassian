@@ -21,6 +21,6 @@
     name: '{{ item.name }}'
   with_items:
     - '{{ pip_packages }}'
-  when: pip_stat.exists
+  when: pip.stat.exists
 
   
