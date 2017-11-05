@@ -3,22 +3,22 @@
 - hosts: localhost
   become: no
   roles:
-    - create_machines
+    - { role: create_machines , when: create.isdefined }
 
 - hosts: all
   become: yes
   remote_user: centos
   roles:
-    - common
+    - { role: common, when: prereq_tag.isdefined }
 
 - hosts: centos-ansible
   become: yes
   remote_user: centos
   roles:
-    - ansible
+    - { role: ansible, when: depl_ansible.isdefined }
 
 - hosts: centos-bamboo
   become: true
   remote_user: centos
   roles:
-    - install-bamboo
+    - { role: install-bamboo, when: depl_bamboo.isdefined }
