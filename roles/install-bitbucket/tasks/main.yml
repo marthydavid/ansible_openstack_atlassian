@@ -1,12 +1,6 @@
 ---
-
-- name: install java-1.8.0-openjdk
-  yum:
-    - name: '{{ java_package }}'
-    - state: present
-
 - name: get bitbucket package
   get_url:
     url: '{{ bitbucket_link }}'
     path: /home/centos/bitbucket.bin
-    mode: 0766
+    mode: 0777

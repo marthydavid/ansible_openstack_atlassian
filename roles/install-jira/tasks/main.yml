@@ -1,12 +1,82 @@
 ---
 
-- name: install java-1.8.0-openjdk
-  yum:
-    - name: '{{ java_package }}'
-    - state: present
-
 - name: get jira package
   get_url:
     url: '{{ jira_link }}'
-    path: /home/centos/jira.bin
-    mode: 0766
+    dest: /home/centos/jira.bin
+    mode: 0777
+
+#- name: create user for jira
+#  user:
+#    name: jira
+#    comment: Jira role account
+#    shell: /bin/bash
+#    createhome: yes
+#
+#- name: stat /opt/atlassian/jira/atlassian-jira
+#  stat:
+#    path: /opt/atlassian/jira/atlassian-jira
+#  register: jira_path
+#
+#- name: create jira app direcotry
+#  file: 
+#    path: /opt/atlassian/jira
+#    state: directory
+#    owner: jira
+#    group: jira
+#    mode: 0766
+#
+#- name: create jira var dir
+#  file:
+#    path: /var/atlassian/application/jira
+#    state: directory
+#    owner: jira
+#
+#- name: unpack jira
+#  unarchive:
+#    src: /home/centos/jira.tar.gz
+#    dest: /opt/atlassian/jira/
+#    remote_src: yes
+#  when: jira_path.stat.exists == False
+#
+#- name: create link for current
+#  file:
+#    src: /opt/atlassian/jira/atlassian-jira-software-7.5.2-standalone
+#    dest: /opt/atlassian/jira/current
+#    state: link
+#    owner: jira
+#    group: jira
+#
+#- name: copy bamboo-init.properties
+#  template:
+#    src: bamboo-init.properties
+#    dest: /opt/atlassian/bamboo/current/atlassian-bamboo/WEB-INF/classes/bamboo-init.properties
+#    owner: bamboo
+#    group: bamboo
+#    mode: 0766
+#
+#- name: copy init script
+#  template:
+#   src: jira
+#   dest: /etc/init.d/jira
+#   owner: root
+#   group: root
+#   mode: 0755
+
+#- name: check jira service
+#  command: chkconfig --list jira
+#  register: chkconfig_list
+#  ignore_errors: True
+#  changed_when: False
+#
+#
+#- name: create jira service
+#  command: chkconfig --add jira
+#  when: chkconfig_list.stdout != "jira         \t0:off\t1:off\t2:on\t3:on\t4:on\t5:on\t6:off"     
+#
+#- name: start jira
+#  systemd:
+#    name: jira
+#    state: started
+#    enabled: True
+#    daemon_reload: yes
