@@ -1,9 +1,0 @@
-unset OS_SERVICE_TOKEN
-export OS_USERNAME=demo
-export OS_PASSWORD=L3n0v0Th1nk
-export PS1='[\u@\h \W(keystone_demo)]\$ '
-export OS_AUTH_URL=http://192.168.1.117:5000/v2.0
-    
-export OS_TENANT_NAME=demo
-export OS_IDENTITY_API_VERSION=2.0
-    
