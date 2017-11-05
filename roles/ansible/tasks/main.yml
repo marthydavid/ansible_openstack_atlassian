@@ -10,22 +10,22 @@
 
 - name: install yum repos
   yum:
-    - name: '{{ item.name }}'
-    - state: present
+    name: '{{ item.name }}'
+    state: present
   with_items:
     - '{{ epel_release }}'
     - '{{ ius_release }}'
 
 - name: install yum packages
   yum:
-    - name: '{{ item.name }}'
-    - state: '{{ item.state}}'
+    name: '{{ item.name }}'
+    state: '{{ item.state}}'
   with_items:
     - '{{ packages }}'
 
 - name: install shade with pip
   pip:
-    - name: '{{ item.name }}'
+    name: '{{ item.name }}'
   with_items:
     - '{{ pip_packages }}'
   when: pip_stat.exists
