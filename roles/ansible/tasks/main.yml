@@ -5,7 +5,7 @@
   register: pip_stat
 
 - debug:
-    vars: pip_stat
+    var: pip_stat
 
 - name: install pip
   command: easy_install pip
