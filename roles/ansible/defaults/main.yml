@@ -3,7 +3,7 @@
 packages:
   - { name: ansible, state: latest}
   - { name: tmux, state: latest}
-  - { name: bind-utils, state: peresent}
+  - { name: bind-utils, state: latest}
 
 pip_packages:
   - {name: shade, state: latest}
