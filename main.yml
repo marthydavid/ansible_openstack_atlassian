@@ -6,7 +6,7 @@
     - create_machines
 
 - hosts: centos-ansible
-  become: no
+  become: yes
   remote_user: centos
   roles:
     - ansible_ping
