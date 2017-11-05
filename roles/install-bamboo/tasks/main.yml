@@ -22,7 +22,6 @@
   file: 
     path: /opt/atlassian/bamboo
     state: directory
-    recurse: yes
     owner: bamboo
     group: bamboo
     mode: 0766
@@ -31,7 +30,6 @@
   file:
     path: /var/atlassian/application/bamboo
     state: directory
-    recurse: yes
     owner: bamboo
 
 - name: unpack bamboo
@@ -69,7 +67,12 @@
   command: chkconfig --list bamboo
   register: chkconfig_list
   ignore_errors: True
+  tag: something
 
+- debug:
+    var: chkconfig_list
+  tag: something
+    
 - name: create bamboo service
   command: chkconfig --add bamboo
   when: chkconfig_list.stdout != "bamboo 0:off 1:off 2:on 3:on 4:on 5:on 6:off"     
