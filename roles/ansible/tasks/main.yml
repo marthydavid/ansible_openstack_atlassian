@@ -4,6 +4,9 @@
     path: /usr/bin/pip
   register: pip_stat
 
+- debug:
+    vars: pip_stat
+
 - name: install pip
   command: easy_install pip
   when: pip_stat.exists == False
