@@ -1,0 +1,9 @@
+---
+
+- name: install prereq packages 
+  yum:
+    name: '{{ item.name }}'
+    state: '{{ item.state }}'
+    update_cache: yes
+  with_items:
+    - '{{ prereq_packages}}'

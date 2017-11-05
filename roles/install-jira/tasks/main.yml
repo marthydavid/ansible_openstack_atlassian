@@ -1,0 +1,12 @@
+---
+
+- name: install java-1.8.0-openjdk
+  yum:
+    - name: '{{ java_package }}'
+    - state: present
+
+- name: get jira package
+  get_url:
+    url: '{{ jira_link }}'
+    path: /home/centos/jira.bin
+    mode: 0766

@@ -5,8 +5,20 @@
   roles:
     - create_machines
 
+- hosts: all
+  become: yes
+  remote_user: centos
+  roles:
+    - common
+
 - hosts: centos-ansible
   become: yes
   remote_user: centos
   roles:
     - ansible
+
+- hosts: centos-bamboo
+  become: true
+  remote_user: centos
+  roles:
+    - install-bamboo

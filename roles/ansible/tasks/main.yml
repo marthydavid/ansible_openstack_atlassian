@@ -8,13 +8,6 @@
   command: easy_install pip
   when: pip.stat.exists == False
 
-- name: install yum repos
-  yum:
-    name: '{{ item }}'
-    state: present
-  with_items:
-    - '{{ epel_release }}'
-    - '{{ ius_release }}'
 
 - name: install yum packages
   yum:

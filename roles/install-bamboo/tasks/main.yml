@@ -1,0 +1,74 @@
+---
+
+- name: get bamboo package
+  get_url:
+    url: '{{ bamboo_link }}'
+    path: /home/centos/bamboo.tar.gz
+    mode: 0766
+
+- name: create user for bamboo
+  user:
+    name: bamboo
+    comment: Bamboo role account
+    shell: /bin/bash
+    createhome: yes
+
+- name: create bamboo app direcotry
+  file: 
+    path: /opt/atlassian/bamboo
+    state: directory
+    recurse: yes
+    owner: bamboo
+    group: bamboo
+    mode: 0766
+
+- name: create bamboo var dir
+  file:
+    path: /var/atlassian/application/bamboo
+    state: directory
+    recurse: yes
+    owner: bamboo
+
+- name: unpack bamboo
+  unarchive:
+    src: /home/centos/bamboo.tar.gz
+    dest: /opt/atlassian/bamboo/
+
+- name: create link for current
+  file:
+    src: /opt/atlassian/bamboo/atlassian-bamboo-6.2.2
+    dest: /opt/atlassian/bamboo/current
+    state: link
+    owner: bamboo
+    group: bamboo
+
+- name: copy bamboo-init.properties
+  template:
+    src: bamboo-init.properties
+    dest: /opt/atlassian/bamboo/current/atlassian-bamboo/WEB-INF/classes/bamboo-init.properties
+    owner: bamboo
+    group: bamboo
+    mode: 0766
+
+- name: copy init script
+  template:
+   src: bamboo
+   dest: /etc/init.d/bamboo
+   owner: root
+   group: root
+   mode: 0755
+
+- name: check bamboo service
+  command: chkconfig --list bamboo
+  register: chkconfig_list
+
+- name: create bamboo service
+  command: chkconfig --add bamboo
+  when: chkconfig_list.stdout != "bamboo 0:off 1:off 2:on 3:on 4:on 5:on 6:off"     
+
+- name: start bamboo
+  systemd:
+    name: bamboo
+    state: started
+    enabled: True
+    daemon_reload: yes
