@@ -75,7 +75,7 @@
 
 - name: create bamboo service
   command: chkconfig --add bamboo
-  when: chkconfig_list.stdout != "bamboo 0:off 1:off 2:on 3:on 4:on 5:on 6:off"     
+  when: chkconfig_list.stdout != "bamboo         \t0:off\t1:off\t2:on\t3:on\t4:on\t5:on\t6:off"     
 
 - name: start bamboo
   systemd:
