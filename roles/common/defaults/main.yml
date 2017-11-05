@@ -10,7 +10,7 @@ bamboo_link: https://www.atlassian.com/software/bamboo/downloads/binary/atlassia
 bitbucket_link: https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-5.5.0-x64.bin
 prereq_packages:
   - { name: epel-release, state: latest}
-  - { name: https://centos7.iuscommunity.org/ius-release.rpm, state: latest}
+  - { name: "https://centos7.iuscommunity.org/ius-release.rpm", state: latest}
   - { name: git2u, state: latest}
   - { name: python-devel, state: latest}
   - { name: vim, state: latest}
