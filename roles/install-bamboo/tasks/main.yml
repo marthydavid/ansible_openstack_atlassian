@@ -70,9 +70,9 @@
   tag: something
 
 - debug:
-    var: chkconfig_list
+    var: chkconfig_list.stdout
   tag: something
-    
+
 - name: create bamboo service
   command: chkconfig --add bamboo
   when: chkconfig_list.stdout != "bamboo 0:off 1:off 2:on 3:on 4:on 5:on 6:off"     
