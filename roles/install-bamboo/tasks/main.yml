@@ -3,7 +3,7 @@
 - name: get bamboo package
   get_url:
     url: '{{ bamboo_link }}'
-    path: /home/centos/bamboo.tar.gz
+    dest: /home/centos/bamboo.tar.gz
     mode: 0766
 
 - name: create user for bamboo
