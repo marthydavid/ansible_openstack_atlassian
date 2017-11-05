@@ -3,14 +3,14 @@
   stat:
     path: /usr/bin/pip
   register: pip
-  
+
 - name: install pip
   command: easy_install pip
   when: pip.stat.exists == False
 
 - name: install yum repos
   yum:
-    name: '{{ item.name }}'
+    name: '{{ item }}'
     state: present
   with_items:
     - '{{ epel_release }}'
