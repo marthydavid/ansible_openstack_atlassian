@@ -1,15 +1,9 @@
-yum install -y java-1.8.0-openjdk postgresql
-useradd --create-home -c "Bamboo role account" bamboo
-mkdir -p /opt/atlassian/bamboo
-mkdir -p /var/atlassian/application/bamboo
-chown bamboo: /var/atlassian/application/bamboo/
-cp /root/atlassian-bamboo-6.2.2.tar.gz /opt/atlassian/bamboo/ -f
-chown -R bamboo: /opt/atlassian/bamboo
-su - bamboo
-cd /opt/atlassian/bamboo
-tar -xvzf atlassian-bamboo-6.2.2.tar.gz
-ln -s atlassian-bamboo-6.2.2 current
-ll
-echo "bamboo.home=/var/atlassian/application/bamboo" >> /opt/atlassian/bamboo/current/atlassian-bamboo/WEB-INF/classes/bamboo-init.properties
-cd /opt/atlassian/bamboo/current
-bin/start-bamboo.sh
+Installation Directory: /opt/atlassian/jira
+Home Directory: /var/atlassian/application-data/jira
+HTTP Port: 8080
+RMI Port: 8005
+
+Installation Directory: /opt/atlassian/bitbucket/5.5.0
+Home Directory: /var/atlassian/application-data/bitbucket
+HTTP Port: 7990
+
