@@ -2,14 +2,11 @@
 - name: query pip
   stat:
     path: /usr/bin/pip
-  register: pip_stat
-
-- debug:
-    var: pip_stat
-
+  register: pip
+  
 - name: install pip
   command: easy_install pip
-  when: pip_stat.exists == False
+  when: pip.stat.exists == False
 
 - name: install yum repos
   yum:
