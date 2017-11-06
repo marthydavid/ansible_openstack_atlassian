@@ -4,6 +4,9 @@
   become: no
   roles:
     - { role: create_machines , when: create is defined }
+  tasks:
+    - name: refresh inventory
+      meta: refresh_inventory
 
 - hosts: all
   become: yes
