@@ -1,0 +1,3 @@
+source keystonerc_admin
+openstack flavor create --id 88a3a24b-216e-4c58-8419-904daef54238 --ram 3072 --disk 20 --vcpus 1 infra.small
+openstack flavor create --id 086ca836-1f4a-4f94-ae25-5d4b51f630a9 --ram 2048 --disk 20 --vcpus 1 agent.small
