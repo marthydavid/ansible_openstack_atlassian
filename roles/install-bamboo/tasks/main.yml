@@ -23,7 +23,7 @@
     path: /opt/atlassian/bamboo
     state: directory
     owner: bamboo
-    group: bamboo
+    group: root
     mode: 0766
 
 - name: create bamboo var dir
@@ -31,12 +31,15 @@
     path: /var/atlassian/application/bamboo
     state: directory
     owner: bamboo
+    group: root
 
 - name: unpack bamboo
   unarchive:
     src: /home/centos/bamboo.tar.gz
     dest: /opt/atlassian/bamboo/
     remote_src: yes
+    owner: bamboo
+    group: root
   when: bamboo_path.stat.exists == False
 
 - name: create link for current
@@ -45,14 +48,14 @@
     dest: /opt/atlassian/bamboo/current
     state: link
     owner: bamboo
-    group: bamboo
+    group: root
 
 - name: copy bamboo-init.properties
   template:
     src: bamboo-init.properties
     dest: /opt/atlassian/bamboo/current/atlassian-bamboo/WEB-INF/classes/bamboo-init.properties
     owner: bamboo
-    group: bamboo
+    group: root
     mode: 0766
 
 - name: copy init script
