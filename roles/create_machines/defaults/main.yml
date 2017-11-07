@@ -3,8 +3,8 @@
 
 atlassian_small_flavor_id: 88a3a24b-216e-4c58-8419-904daef54238
 atlassian_agent_small_flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9
-image_id: 503c4b22-4bff-43a9-a102-32c956625881
-network_id: 7e9bee1f-8d42-4190-87d5-900d84af4dd8
+image_id: 0ed374b2-4fde-4076-a9ed-91e180ab3694
+network_id: af026aac-5d4f-40aa-9e83-c451802815f6
 jira_link: https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.5.2-x64.bin
 bamboo_link: https://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-6.2.2.tar.gz
 bitbucket_link: https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-5.5.0-x64.bin

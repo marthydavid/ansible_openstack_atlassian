@@ -1,7 +1,7 @@
 ---
 # vars file for create_machines
 machines:
-  - {machinename: centos-ansible, hostname: centos-ansible.marthyhome.lab, floating_ips: 192.168.1.202, flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9, network_id: 7e9bee1f-8d42-4190-87d5-900d84af4dd8, state: present, tag: agent}
-  - {machinename: centos-bamboo, hostname: centos-bamboo.marthyhome.lab, floating_ips: 192.168.1.203, flavor_id: 88a3a24b-216e-4c58-8419-904daef54238, network_id: 7e9bee1f-8d42-4190-87d5-900d84af4dd8, state: present, tag: bamboo}
-  - {machinename: centos-bitbucket, hostname: centos-bitbucket.marthyhome.lab, floating_ips: 192.168.1.204, flavor_id: 88a3a24b-216e-4c58-8419-904daef54238, network_id: 7e9bee1f-8d42-4190-87d5-900d84af4dd8, state: present, tag: bitbucket}
-  - {machinename: centos-jira, hostname: centos-jira.marthyhome.lab, floating_ips: 192.168.1.205, flavor_id: 88a3a24b-216e-4c58-8419-904daef54238, network_id: 7e9bee1f-8d42-4190-87d5-900d84af4dd8, state: present, tag: jira}
+  - {machinename: centos-ansible, hostname: centos-ansible.marthyhome.lab, floating_ips: 192.168.1.202, flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: agent}
+  - {machinename: centos-bamboo, hostname: centos-bamboo.marthyhome.lab, floating_ips: 192.168.1.203, flavor_id: 88a3a24b-216e-4c58-8419-904daef54238, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: bamboo}
+  - {machinename: centos-bitbucket, hostname: centos-bitbucket.marthyhome.lab, floating_ips: 192.168.1.204, flavor_id: 88a3a24b-216e-4c58-8419-904daef54238, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: bitbucket}
+  - {machinename: centos-jira, hostname: centos-jira.marthyhome.lab, floating_ips: 192.168.1.205, flavor_id: 88a3a24b-216e-4c58-8419-904daef54238, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: jira}
