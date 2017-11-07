@@ -14,7 +14,10 @@
     nics:
       - net-id: '{{ item.network_id }}'
     meta:
-      hostname: "{{ item.hostname}}"
+      hostname: '{{ item.hostname}}'
       tag: "{{ item.tag }}"
+    userdata:
+      #cloud-config
+      hostname: '{{ item.hostname }}'
   with_items:
     - '{{ machines }}'
