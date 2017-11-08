@@ -28,4 +28,32 @@
     - '{{ pip_packages }}'
   when: pip.stat.exists and shade.stat.exists == False
 
-  
+- name: install maven
+  get_url:
+    url: https://www.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
+    dest: /home/centos/apache-maven.bin.tar.gz
+    mode: 0755
+
+- name: unpack
+  unarchive:
+    src: /home/centos/apache-maven.bin.tar.gz
+    dest: /opt/apache/maven
+    remote_src: yes
+    owner: centos
+    group: root
+    mode: 0755
+
+- name: create link for bin
+  file:
+    state: link
+    src: /opt/apache/maven/bin/mvn
+    dest: /usr/bin/mvn
+    mode: 0777
+
+- name: copy profile.d/maven.sh
+  template:
+    src: maven.sh
+    dest: /etc/profile.d/maven.sh
+    owner: root
+    group: root
+    mode: 0777
