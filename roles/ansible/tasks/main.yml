@@ -56,6 +56,7 @@
     remote_src: yes
     owner: root
     group: root
+    copy: no
     mode: 0755
   when: maven.stat.exists
 
