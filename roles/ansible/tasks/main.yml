@@ -47,7 +47,7 @@
 - name: install maven
   get_url:
     url: https://www.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.zip
-    dest: /home/centos/apache-maven.bin.tar.gz
+    dest: /home/centos/apache-maven.bin.zip
     mode: 0755
 
 - name: unpack
