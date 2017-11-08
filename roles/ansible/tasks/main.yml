@@ -28,49 +28,16 @@
     - '{{ pip_packages }}'
   when: pip.stat.exists and shade.stat.exists == False
 
-- name: stat maven dir
-  stat:
-    path: /opt/apache/maven
-  register: maven
-
-- name: create maven dir
-  file:
-    state: directory
+- name: get repo
+  get_url:
+    url: http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo
+    dest: /etc/yum.repos.d/epel-apache-maven.repo
     owner: root
     group: root
-    mode: 0777
-    path: /opt/apache/maven
-    force: yes
-  when: maven.stat.exists == False
-  register: maven_created
+    mode: 644
 
 - name: install maven
-  get_url:
-    url: https://www.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.zip
-    dest: /home/centos/apache-maven.bin.zip
-    mode: 0755
-
-- name: unpack
-  unarchive:
-    src: /home/centos/apache-maven.bin.zip
-    dest: /opt/apache/maven
-    remote_src: yes
-    owner: root
-    group: root
-    mode: 0755
-  when: maven_created.changed
-
-- name: create link for bin
-  file:
-    state: link
-    src: /opt/apache/maven/bin/mvn
-    dest: /usr/bin/mvn
-    mode: 0777
-
-- name: copy profile.d/maven.sh
-  template:
-    src: maven.sh
-    dest: /etc/profile.d/maven.sh
-    owner: root
-    group: root
-    mode: 0777
+  yum:
+    name: apache-maven
+    state: present
+    
