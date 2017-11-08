@@ -36,10 +36,11 @@
 - name: create maven dir
   file:
     state: directory
-    owner: centos
+    owner: root
     group: root
     mode: 0777
     path: /opt/apache/maven
+    force: yes
   when: maven.stat.exists == False
 
 - name: install maven
@@ -53,7 +54,7 @@
     src: /home/centos/apache-maven.bin.tar.gz
     dest: /opt/apache/maven
     remote_src: yes
-    owner: centos
+    owner: root
     group: root
     mode: 0755
   when: maven.stat.exists
