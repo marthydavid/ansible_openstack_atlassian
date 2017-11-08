@@ -46,13 +46,13 @@
 
 - name: install maven
   get_url:
-    url: https://www.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
+    url: https://www.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.zip
     dest: /home/centos/apache-maven.bin.tar.gz
     mode: 0755
 
 - name: unpack
   unarchive:
-    src: /home/centos/apache-maven.bin.tar.gz
+    src: /home/centos/apache-maven.bin.zip
     dest: /opt/apache/maven
     remote_src: yes
     owner: root
