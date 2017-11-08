@@ -28,6 +28,20 @@
     - '{{ pip_packages }}'
   when: pip.stat.exists and shade.stat.exists == False
 
+- name: stat maven dir
+  stat:
+    path: /opt/apache/maven
+  register: maven
+
+- name: create maven dir
+  file:
+    state: directory
+    owner: centos
+    group: root
+    mode: 0777
+    path: /opt/apache/maven
+  when: maven.stat.exists == False
+
 - name: install maven
   get_url:
     url: https://www.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
@@ -42,6 +56,7 @@
     owner: centos
     group: root
     mode: 0755
+  when: maven.stat.exists
 
 - name: create link for bin
   file:
