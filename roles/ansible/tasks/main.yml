@@ -42,6 +42,7 @@
     path: /opt/apache/maven
     force: yes
   when: maven.stat.exists == False
+  register: maven_created
 
 - name: install maven
   get_url:
@@ -58,7 +59,7 @@
     group: root
     copy: no
     mode: 0755
-  when: maven.stat.exists
+  when: maven_created.changed
 
 - name: create link for bin
   file:
