@@ -9,6 +9,12 @@
   tasks:
     - name: refresh inventory
       meta: refresh_inventory
+- hosts: all
+  become: no
+  tags:
+    - start
+  roles:
+    - { role: start_machines}
 
 - hosts: all
   become: yes
@@ -26,16 +32,16 @@
   become: true
   remote_user: centos
   roles:
-    - { role: install-bamboo, when: depl_bamboo is defined }
+    - { role: install_bamboo, when: depl_bamboo is defined }
 
 - hosts: centos-jira
   become: true
   remote_user: centos
   roles:
-    - { role: install-jira, when: depl_jira is defined }
+    - { role: install_jira, when: depl_jira is defined }
 
 - hosts: centos-bitbucket
   become: true
   remote_user: centos
   roles:
-    - { role: install-bitbucket, when: depl_bitbucket is defined }
+    - { role: install_bitbucket, when: depl_bitbucket is defined }
