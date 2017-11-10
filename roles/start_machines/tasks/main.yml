@@ -4,7 +4,7 @@
 - name: starting the machine
   os_server_actions:
     action: start
-    server: '{{ ansible_hostname }}'
+    server: '{{ item.machinename }}'
     wait: yes
   with_items:
     - '{{ machines }}'
