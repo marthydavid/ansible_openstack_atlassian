@@ -22,3 +22,8 @@ $dest = 'c:\HyperVNovaCompute_Newton_14_0_1.msi'
 Invoke-WebRequest -uri $src -OutFile $dest
 Unblock-File $dest
 Start-Process $dest
+
+
+
+iptables -I INPUT -s 192.168.1.111/32 -p tcp --dport 9696 -j ACCEPT
+iptables -I INPUT -s 192.168.1.111/32 -p tcp --dport 9292 -j ACCEPT
