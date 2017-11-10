@@ -2,7 +2,7 @@
 # tasks file for start-machines
 
 - name: starting the machine
-  os_server_actions:
+  os_server_action:
     action: start
     server: '{{ item.machinename }}'
     wait: yes
