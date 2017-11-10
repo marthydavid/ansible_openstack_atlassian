@@ -16,7 +16,7 @@
   tags:
     - start
   roles:
-    - { role: start_machines}
+    - { role: start_machines, when: server_action == start or server_action == stop and server_action is defined}
 
 - hosts: all
   become: yes

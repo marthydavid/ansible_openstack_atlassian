@@ -3,7 +3,7 @@
 
 - name: starting the machine
   os_server_action:
-    action: start
+    action: '{{ server_action }}'
     server: '{{ item.machinename }}'
     wait: yes
   with_items:
