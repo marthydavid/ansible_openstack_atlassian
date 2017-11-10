@@ -12,3 +12,13 @@ openstack security group rule create --ingress --protocol tcp --dst-port 8085 --
 openstack security group rule create --ingress --protocol tcp --dst-port 7990 --remote-ip 0.0.0.0/0 bea67bd1-6f66-4d81-87db-def11c2d1f9d
 openstack security group rule create --ingress --protocol tcp --dst-port 7999 --remote-ip 0.0.0.0/0 bea67bd1-6f66-4d81-87db-def11c2d1f9d
 openstack security group rule create --ingress --protocol tcp --dst-port 54663 --remote-ip 0.0.0.0/0 bea67bd1-6f66-4d81-87db-def11c2d1f9d
+
+
+
+
+HYPERV_CORE
+$src = 'https://cloudbase.it/downloads/HyperVNovaCompute_Newton_14_0_1.msi'
+$dest = 'c:\HyperVNovaCompute_Newton_14_0_1.msi'
+Invoke-WebRequest -uri $src -OutFile $dest
+Unblock-File $dest
+Start-Process $dest
