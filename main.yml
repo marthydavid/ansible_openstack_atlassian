@@ -9,7 +9,8 @@
   tasks:
     - name: refresh inventory
       meta: refresh_inventory
-- hosts: all
+
+- hosts: localhost
   gather_facts: no
   become: no
   tags:
