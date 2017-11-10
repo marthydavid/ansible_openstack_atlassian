@@ -10,6 +10,7 @@
     - name: refresh inventory
       meta: refresh_inventory
 - hosts: all
+  gather_facts: no
   become: no
   tags:
     - start

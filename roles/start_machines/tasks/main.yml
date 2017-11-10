@@ -4,6 +4,6 @@
 - name: starting the machine
   os_server_actions:
     action: start
-    name: '{{ item.ansible_hostname }}'
+    name: '{{ ansible_hostname }}'
     wait: yes
   with_items: groups['ALL']
