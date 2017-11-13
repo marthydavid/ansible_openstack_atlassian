@@ -13,7 +13,7 @@
     dest: /var/www/html/info.php
     mode: 0644
     owner: root
-    group: www-data
+    group: root
 
 - name: start services
   systemd:
