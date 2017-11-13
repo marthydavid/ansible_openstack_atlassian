@@ -4,6 +4,8 @@
   yum:
     name: '{{ item.name }}'
     state: '{{ item.state }}'
+  with_items:
+    - '{{ yum_packages }}'
 
 - name: copy php_info
   template:
@@ -18,4 +20,5 @@
     name: '{{ item.name }}'
     state: '{{ item.name }}'
     enabled: '{{ item.enabled }}'
-
+  with_items:
+    - '{{ systemd_apps }}'
