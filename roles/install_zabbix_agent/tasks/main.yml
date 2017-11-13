@@ -3,7 +3,7 @@
 - name: install zabbix-agent
   yum:
     name: '{{ item.name }}'
-    state: '{{ item.name }}'
+    state: '{{ item.state }}'
   with_items:
     - '{{ zabbix_agent_package }}'
 
