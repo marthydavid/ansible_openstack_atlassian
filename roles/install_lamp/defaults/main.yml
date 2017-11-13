@@ -7,6 +7,6 @@ yum_packages:
   - {name: php-mysql, state: present}
 
 systemd_apps:
-  - {name: httpd, state: started, enabled: yes}
-  - {name: mariadb, state: started, enabled: yes}
-  - {name: httpd, state: restarted, enabled: yes}
+  - {name: httpd, state: started, enabled: true}
+  - {name: mariadb, state: started, enabled: true}
+  - {name: httpd, state: restarted, enabled: true}

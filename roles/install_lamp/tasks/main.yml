@@ -13,12 +13,12 @@
     dest: /var/www/html/info.php
     mode: 0644
     owner: root
-    group: root
+    group: root 
 
 - name: start services
   systemd:
     name: '{{ item.name }}'
-    state: '{{ item.name }}'
+    state: '{{ item.state }}'
     enabled: '{{ item.enabled }}'
   with_items:
     - '{{ systemd_apps }}'
