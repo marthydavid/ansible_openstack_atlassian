@@ -4,7 +4,7 @@ prereq_packages:
   - {name: php-cli, state: present}
   - {name: php-common, state: present}
   - {name: php-devel, state: present}
-  - {name: php-gear, state: present}
+  - {name: php-pear, state: present}
   - {name: php-gd, state: present}
   - {name: php-mbstring, state: present}
   - {name: php-mysql, state: present}
