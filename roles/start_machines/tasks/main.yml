@@ -8,3 +8,9 @@
     wait: yes
   with_items:
     - '{{ machines }}'
+
+- name: Waiting for machines to get SSH access
+  wait_for:
+    host: '{{ inventory_hostname }}'
+    port: 22
+  delegate_to: localhost

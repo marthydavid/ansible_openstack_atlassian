@@ -1,0 +1,21 @@
+---
+
+- name: install packages
+  yum:
+    name: '{{ item.name }}'
+    state: '{{ item.state }}'
+
+- name: copy php_info
+  template:
+    src: info.php
+    dest: /var/www/html/info.php
+    mode: 0644
+    owner: root
+    group: www-data
+
+- name: start services
+  systemd:
+    name: '{{ item.name }}'
+    state: '{{ item.name }}'
+    enabled: '{{ item.enabled }}'
+

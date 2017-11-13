@@ -47,3 +47,9 @@
   remote_user: centos
   roles:
     - { role: install_bitbucket, when: depl_bitbucket is defined }
+
+- hosts: centos-zabbix
+  become: true
+  remote_user: centos
+  roles:
+    - { role: install_lamp, when: depl_lamp is defined}
