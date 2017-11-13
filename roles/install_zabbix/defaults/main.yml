@@ -1,0 +1,38 @@
+---
+
+prereq_packges:
+  - {name: php-cli, state: present}
+  - {name: php-common, state: present}
+  - {name: php-devel, state: present}
+  - {name: php-gear, state: present}
+  - {name: php-gd, state: present}
+  - {name: php-mbstring, state: present}
+  - {name: php-mysql, state: present}
+  - {name: php-xml, state: present}
+  - {name: http://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/zabbix-release-3.4-1.el7.centos.noarch.rpm, state: present}
+  - {name: policycoreutils-python, state: present}
+#  - {name: , state: present}
+
+zabbix_packages:
+  - {name: zabbix-server-mysql, state: present}
+  - {name: zabbix-web-mysql, state: present}
+
+lineinfile_php:
+  - {path: /etc/httpd/conf.d/zabbix.conf, regexp: ^php_value date.timezone , line: php_value date.timezone Europe/Budapest}
+  - {path: /etc/httpd/conf.d/zabbix.conf, regexp: ^php_value max_execution_time , line: php_value max_execution_time 600}
+  - {path: /etc/httpd/conf.d/zabbix.conf, regexp: ^php_value memory_limit, line: php_value memory_limit 128M}
+  - {path: /etc/httpd/conf.d/zabbix.conf, regexp: ^php_value post_max_size, line: php_value post_max_size 32M}
+  - {path: /etc/httpd/conf.d/zabbix.conf, regexp: ^php_value upload_max_filesize, line: php_value upload_max_filesize 16M}
+  - {path: /etc/httpd/conf.d/zabbix.conf, regexp: ^php_value max_input_time, line: php_value max_input_time 600}
+  - {path: /etc/httpd/conf.d/zabbix.conf, regexp: ^php_value always_populate_raw_post_data, line: php_value always_populate_raw_post_data -1}
+
+zabbix_mysql_db:
+  - {name: zabbixdb, state: present, target: /usr/share/doc/zabbix-server-mysql*/create.sql.gz}
+zabbix_mysql_user:
+  - {name: zabbixuser, password: Almafa12#$, priv: 'zabbixdb.*:ALL', state: present}
+
+zabbix_server_conf:
+  - {path: /etc/zabbix/zabbix_server.conf, regexp: ^DBHost, line: DBHost=localhost}
+  - {path: /etc/zabbix/zabbix_server.conf, regexp: ^DBName, line: DBName=zabbixdb}
+  - {path: /etc/zabbix/zabbix_server.conf, regexp: ^DBUser, line: DBUser=zabbixuser}
+  - {path: /etc/zabbix/zabbix_server.conf, regexp: ^DBPassword, line: DBPassword=Almafa12#$}

@@ -1,0 +1,53 @@
+---
+
+- name: install prereq packages
+  yum:
+    name: '{{ item.name }}'
+    state: '{{ item.state }}'
+  with_items:
+    - '{{ prereq_packages }}'
+
+- name: install zabbix packages
+  yum:
+    name: '{{ item.name }}'
+    state: '{{ item.state }}'
+  with_items:
+    - '{{ zabbix_packages }}'
+
+- name: replace some settings
+  lineinfile:
+    path: '{{ item.path }}'
+    regexp: '{{ item.regexp }}'
+    line: '{{ item.line }}'
+  with_items:
+    - '{{ lineinfile_php }}'
+  notify:
+    httpd
+
+- name: create mysql db for zabbix
+  mysql_db:
+    name: '{{ item.name }}'
+    state: '{{ item.state }}'
+  with_items:
+    - '{{ zabbix_mysql_db }}'
+
+- name: create mysql db for zabbix
+  mysql_user:
+    name: '{{ item.name }}'
+    password: '{{ item.password }}'
+    priv: '{{ item.priv }}'
+    state: '{{ item.state }}'
+  with_items:
+    - '{{ zabbix_mysql_user }}'
+
+- name: replace some settings
+  lineinfile:
+    path: '{{ item.path }}'
+    regexp: '{{ item.regexp }}'
+    line: '{{ item.line }}'
+  with_items:
+    - '{{ zabbix_server_conf }}'
+  notify:
+    - httpd
+    - zabbix-server
+    - mariadb

@@ -1,0 +1,17 @@
+- name: httpd
+  systemd:
+    name: httpd
+    state: restarted
+    enabled: yes
+
+- name: zabbix-server
+  systemd:
+    name: zabbix-server
+    state: started
+    enabled: yes
+
+- name: mariadb
+  systemd:
+    name: mariadb
+    state: restarted
+    enabled: yes
