@@ -1,6 +1,6 @@
 ---
 
-prereq_packges:
+prereq_packages:
   - {name: php-cli, state: present}
   - {name: php-common, state: present}
   - {name: php-devel, state: present}
