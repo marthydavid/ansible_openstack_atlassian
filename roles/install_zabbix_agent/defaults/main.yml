@@ -7,4 +7,4 @@ zabbix_agent_package:
 
 linein_agentd:
   - {path: /etc/zabbix/zabbix_agentd.conf, regexp: ^Server=, line: Server=192.168.1.206}
-  - {path: /etc/zabbix/zabbix_agentd.conf, regexp: ^Hostname=, line: Hostname={{ ansible_hostname }}}
+  - {path: /etc/zabbix/zabbix_agentd.conf, regexp: ^Hostname=, line: "Hostname={{ ansible_hostname }}"}
