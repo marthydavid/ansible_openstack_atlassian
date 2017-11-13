@@ -45,6 +45,8 @@
     path: '{{ item.path }}'
     regexp: '{{ item.regexp }}'
     line: '{{ item.line }}'
+    owner: zabbix
+    group: zabbix
   with_items:
     - '{{ zabbix_server_conf }}'
   notify:

@@ -1,0 +1,24 @@
+---
+
+- name: install zabbix-agent
+  yum:
+    name: '{{ item.name }}'
+    state: '{{ item.name }}'
+  with_items:
+    - '{{ zabbix_agent_package }}'
+
+- name: configure agentd
+  lineinfile:
+    path: '{{ item.path }}'
+    regexp: '{{ item.regexp }}'
+    line: '{{ item.line }}'
+    owner: zabbix
+    group: zabbix
+  with_items:
+    - '{{ linein_agentd }}'
+
+- name: restart zabbix-agent
+  systemd:
+    name: zabbix-agent
+    state: restarted
+    enabled: yes
