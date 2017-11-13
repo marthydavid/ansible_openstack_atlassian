@@ -53,3 +53,4 @@
   remote_user: centos
   roles:
     - { role: install_lamp, when: depl_lamp is defined}
+    - { role: install_zabbix, when: depl_zabbix is defined}
