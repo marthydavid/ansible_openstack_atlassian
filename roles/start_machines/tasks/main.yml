@@ -11,6 +11,8 @@
 
 - name: Waiting for machines to get SSH access
   wait_for:
-    host: '{{ inventory_hostname }}'
+    host: '{{ item.floating_ips }}'
     port: 22
   delegate_to: localhost
+  with_items:
+    - '{{ machines }}'
