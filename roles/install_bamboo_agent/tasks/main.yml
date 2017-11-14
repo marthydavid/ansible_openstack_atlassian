@@ -19,7 +19,7 @@
   when: service_path.stat.exists == false
 
 - name: start agent
-  command: java -jar -Dbamboo.home=/opt/bamboo-agent /root/atlassian-bamboo-agent-installer-6.2.2.jar http://centos-bamboo.marthyhome.lab:8085/agentServer/
+  command: java -jar -Dbamboo.home=/opt/bamboo-agent /root/atlassian-bamboo-agent-installer-6.2.2.jar http://centos-bamboo.marthyhome.lab:8085/agentServer/ > /dev/null
   when: service_path.stat.exists == false
 
 - name: copy bamboo-agent.service
