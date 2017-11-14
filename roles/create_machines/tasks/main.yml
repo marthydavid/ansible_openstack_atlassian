@@ -16,6 +16,7 @@
     meta:
       hostname: '{{ item.hostname}}'
       tag: "{{ item.tag }}"
+      state: "{{ item.meta_state }}"
     userdata:
       #cloud-config
       hostname: '{{ item.hostname }}'

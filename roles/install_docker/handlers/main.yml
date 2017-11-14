@@ -1,0 +1,8 @@
+---
+# handlers file for common
+
+- name: start docker
+  systemd:
+    name: docker
+    state: started
+    enabled: yes

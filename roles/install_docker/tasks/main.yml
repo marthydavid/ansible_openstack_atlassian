@@ -1,0 +1,42 @@
+---
+# tasks file for common
+- name: install epel release
+  yum: 
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items:
+    - "{{ yum_epel_release }}"
+
+- name: install stuff
+  yum:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items:
+    - "{{ prerequisite_for_repo }}"
+
+- name: configure repo
+  command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+- name: install docker-ce
+  yum:
+    name: docker-ce
+    state: present
+  notify:
+    - start docker    
+  register: docker_ce_installed
+
+- name: add user to docker group
+  command: usermod -aG docker centos
+
+- name: add bash_completion package
+  yum:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items:
+    - "{{ yum_bash_completion }}"
+
+- name: add bash completion
+  get_url: 
+    url: https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker
+    dest: /etc/bash_completion.d/docker
+    mode: 0644
