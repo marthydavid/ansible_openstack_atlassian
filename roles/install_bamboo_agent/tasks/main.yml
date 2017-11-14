@@ -16,11 +16,11 @@
   get_url:
     url: centos-bamboo.marthyhome.lab:8085/agentServer/agentInstaller/atlassian-bamboo-agent-installer-6.2.2.jar
     dest: /root/atlassian-bamboo-agent-installer-6.2.2.jar
-  when: service_path.exists == false
+  when: service_path.stat.exists == false
 
 - name: start agent
   command: java -jar -Dbamboo.home=/opt/bamboo-agent /root/atlassian-bamboo-agent-installer-6.2.2.jar http://centos-bamboo.marthyhome.lab:8085/agentServer/
-  when: service_path.exists == false
+  when: service_path.stat.exists == false
 
 - name: copy bamboo-agent.service
   template:
@@ -29,14 +29,14 @@
     owner: root
     group: root
     mode: 0644
-  when: service_path.exists == false
+  when: service_path.stat.exists == false
 
 - name: reload systemd
   command: systemctl daemon-reload
-  when: service_path.exists == false
-  
+  when: service_path.stat.exists == false
+
 - name: start bamboo-agnet
   systemd:
     name: bamboo-agent
     state: started
-  when: service_path.exists == false
+  when: service_path.stat.exists == false
