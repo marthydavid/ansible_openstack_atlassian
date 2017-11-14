@@ -65,17 +65,17 @@
   become: true
   remote_user: centos
   roles:
-    - { role: install_docker}
+    - { role: install_docker, when: depl_agent is defined}
 
 - hosts: agent*
   become: true
   remote_user: centos
   roles:
-    - { role: ansible}
+    - { role: ansible, when: depl_agent is defined}
 
 - hosts: agent*
   become: true
   remote_user: centos
   roles:
-    - { role: install_bamboo_agent}
+    - { role: install_bamboo_agent, when: depl_agent is defined}
   
