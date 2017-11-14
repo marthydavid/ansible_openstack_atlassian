@@ -1,10 +1,10 @@
 ---
 # vars file for create_machines
 machines:
-  - {machinename: centos-ansible, hostname: centos-ansible.marthyhome.lab, floating_ips: 192.168.1.202, flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: agent}
-  - {machinename: centos-jira, hostname: centos-jira.marthyhome.lab, floating_ips: 192.168.1.203, flavor_id: 88a3a24b-216e-4c58-8419-904daef54238, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: jira}
-  - {machinename: centos-bitbucket, hostname: centos-bitbucket.marthyhome.lab, floating_ips: 192.168.1.204, flavor_id: 88a3a24b-216e-4c58-8419-904daef54238, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: bitbucket}
-  - {machinename: centos-bamboo, hostname: centos-bamboo.marthyhome.lab, floating_ips: 192.168.1.205, flavor_id: 88a3a24b-216e-4c58-8419-904daef54238, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: bamboo}
-  - {machinename: centos-zabbix, hostname: centos-zabbix.marthyhome.lab, floating_ips: 192.168.1.206, flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: zabbix}
+  - {machinename: centos-ansible, hostname: centos-ansible.marthyhome.lab, floating_ips: 192.168.1.202, flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: agent, meta_state: non}
+  - {machinename: centos-jira, hostname: centos-jira.marthyhome.lab, floating_ips: 192.168.1.203, flavor_id: 88a3a24b-216e-4c58-8419-904daef54238, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: jira, meta_state: non}
+  - {machinename: centos-bitbucket, hostname: centos-bitbucket.marthyhome.lab, floating_ips: 192.168.1.204, flavor_id: 88a3a24b-216e-4c58-8419-904daef54238, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: bitbucket, meta_state: non}
+  - {machinename: centos-bamboo, hostname: centos-bamboo.marthyhome.lab, floating_ips: 192.168.1.205, flavor_id: 88a3a24b-216e-4c58-8419-904daef54238, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: bamboo, meta_state: non}
+  - {machinename: centos-zabbix, hostname: centos-zabbix.marthyhome.lab, floating_ips: 192.168.1.206, flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: zabbix, meta_state: non}
   - {machinename: agent1, hostname: agent1.marthyhome.lab, floating_ips: 192.168.1.207, flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: agent, meta_state: free}
   - {machinename: agent2, hostname: agent2.marthyhome.lab, floating_ips: 192.168.1.208, flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: agent, meta_state: free}
