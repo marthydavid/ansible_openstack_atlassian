@@ -8,3 +8,4 @@ machines:
   - {machinename: centos-zabbix, hostname: centos-zabbix.marthyhome.lab, floating_ips: 192.168.1.206, flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: zabbix, meta_state: non}
   - {machinename: agent1, hostname: agent1.marthyhome.lab, floating_ips: 192.168.1.207, flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: agent, meta_state: free}
   - {machinename: agent2, hostname: agent2.marthyhome.lab, floating_ips: 192.168.1.208, flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: agent, meta_state: free}
+  - {machinename: agent3, hostname: agent3.marthyhome.lab, floating_ips: 192.168.1.209, flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9, network_id: af026aac-5d4f-40aa-9e83-c451802815f6, state: present, tag: agent, meta_state: free}
