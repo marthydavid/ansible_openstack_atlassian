@@ -71,5 +71,11 @@
   become: true
   remote_user: centos
   roles:
+    - { role: ansible}
+
+- hosts: agent*
+  become: true
+  remote_user: centos
+  roles:
     - { role: install_bamboo_agent}
   
