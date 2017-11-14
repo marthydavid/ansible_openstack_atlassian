@@ -4,8 +4,8 @@ After=syslog.target network.target
 
 [Service]
 Type=forking
-User=apps
-Group=apps
+User=root
+Group=root
 ExecStart=/opt/bamboo-agent/bin/bamboo-agent.sh start
 ExecStop=/opt/bamboo-agent/bin/bamboo-agent.sh stop
 

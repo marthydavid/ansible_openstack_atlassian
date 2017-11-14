@@ -25,8 +25,12 @@
     dest: /root/atlassian-bamboo-agent-installer-6.2.2.jar
   when: service_path.stat.exists == false
 
-- name: start agent
+- name: create agent
   command: java -jar -Dbamboo.home=/opt/bamboo-agent /root/atlassian-bamboo-agent-installer-6.2.2.jar http://centos-bamboo.marthyhome.lab:8085/agentServer/ install creates=/opt/bamboo-agent/bin/bamboo-agent.sh
+  when: service_path.stat.exists == false
+
+- name: start agent
+  command: /opt/bamboo-agent/bin/bamboo-agent.sh start
   when: service_path.stat.exists == false
 
 - name: copy bamboo-agent.service
@@ -45,5 +49,5 @@
 - name: start bamboo-agnet
   systemd:
     name: bamboo-agent
-    state: started
+    enabled: yes
   when: service_path.stat.exists == false
