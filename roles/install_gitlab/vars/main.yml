@@ -12,6 +12,6 @@ systemd_vars:
 
 env_var:
   EXTERNAL_URL: http://centos-gitlab.marthyhome.lab
-  
+
 gitlab_url:
-  - {url: https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh, dest: /root/script.rpm.sh}
+  - {url: "https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh", dest: /root/script.rpm.sh}
