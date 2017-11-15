@@ -79,3 +79,8 @@
   roles:
     - { role: install_bamboo_agent, when: depl_agent is defined}
   
+- hosts: centos-gitlab
+  become: true
+  remote_user: centos
+  roles:
+    - {role: install_gitlab, when: depl_gitlab is defined}

@@ -1,0 +1,35 @@
+---
+
+- name: Install prereq packages
+  yum:
+    name: '{{ item.name }}'
+    state: '{{ item.state }}'
+  with_items:
+    - '{{ prereq_packages }}'
+
+- name: start and enable
+  systemd:
+    name: '{{ item.name }}'
+    state: '{{ item.state }}'
+    enabled: yes
+  with_items:
+    - '{{ systemd_vars }}'
+
+- name: get repo.sh
+  get_url:
+    url: '{{ item.url }}'
+    dest: '{{ item.dest }}'
+  with_items:
+    - '{{ gitlab_url }}'
+
+- name: run repo install
+  command: "bash {{ item.dest }}"
+  with_items:
+    - '{{ gitlab_url }}'
+
+- name: install gitlab-ce
+  yum: 
+    name: gitlab-ce
+    state: present
+  environment: "{{ env_var }}"
+    
