@@ -40,3 +40,13 @@
     url: https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker
     dest: /etc/bash_completion.d/docker
     mode: 0644
+
+- name: daemon.json
+  template:
+    src: daemon.json
+    dest: /etc/docker/daemon.json
+    owner: root
+    group: root
+    mode: 0600
+
+    
