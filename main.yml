@@ -21,6 +21,9 @@
 - hosts: all
   become: yes
   gather_facts: no
+  tags:
+    - prereq
+    - ansible-node
   remote_user: centos
   roles:
     - { role: common, when: prereq_tag is defined }
@@ -28,6 +31,8 @@
 - hosts: centos-ansible
   become: yes
   gather_facts: no
+  tags:
+    - ansible-node
   remote_user: centos
   roles:
     - { role: ansible, when: depl_ansible is defined }
@@ -35,6 +40,8 @@
 - hosts: centos-bamboo
   become: yes
   gather_facts: no
+  tags:
+    - bamboo
   remote_user: centos
   roles:
     - { role: install_bamboo, when: depl_bamboo is defined }
