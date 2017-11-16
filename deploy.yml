@@ -14,7 +14,11 @@
         depl_ansible: item.metadata.depl_ansible
       with_items:
         - "{{ something.ansible_facts.openstack_servers }}"
-
+        
+- hosts: all
+  become: yes
+  gather_facts: yes
+  remote_user: centos
   roles:
 #    - { role: load_vars}
     - { role: common, when: prereq_tag is defined } 
