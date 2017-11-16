@@ -9,4 +9,4 @@
     two_fact: "{{ something | list }}"
 
 - debug: var=item
-  with_items: "{{ something.ansible_facts.openstack_server.metadata}}"
+  with_items: "{{ something.ansible_facts.openstack_servers.metadata}}"
