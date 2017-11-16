@@ -5,7 +5,7 @@
   remote_user: centos
   roles:
     - { role: common, when: prereq_tag is defined } 
-    - { role: ansible, when: depl_ansible is defined or depl_agent is defined }
+    - { role: ansible, when: metadata.depl_ansible is defined or depl_agent is defined }
     - { role: install_jira, when: depl_jira is defined }
     - { role: install_bamboo, when: depl_bamboo is defined }
     - { role: install_bitbucket, when: depl_bitbucket is defined }
