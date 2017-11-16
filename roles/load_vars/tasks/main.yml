@@ -12,4 +12,5 @@
   when: item.0.metadata.depl_ansible == "1"
   with_subelements:
     - "{{ something.ansible_facts.openstack_servers}}"
-    - ['metadata.depl_ansible','metadata.state', 'metadata.hostname']
+    - metadata
+    - depl_ansible
