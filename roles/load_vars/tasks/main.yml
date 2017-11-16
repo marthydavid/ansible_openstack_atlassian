@@ -1,11 +1,7 @@
 - name: server_facts
-  delegate_to: 127.0.0.1
-  os_server_facts:
-    auth:
-      auth_url: http://192.168.1.100:5000/v2.0/
-      username: demo
-      password: Pa$$W0rd
-      project_name: demo
+  local_action:
+    module: os_server_facts
+    auth: auth_url=http://192.168.1.100:5000/v2.0/ username=demo password=Pa$$W0rd project_name=demo
     server: '{{ ansible_hostname }}'
 
 - set_fact:
