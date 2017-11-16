@@ -3,8 +3,9 @@
     module: os_server_facts
     auth: auth_url=http://192.168.1.100:5000/v2.0/ username=demo password=Pa$$W0rd project_name=demo
     server: '{{ ansible_hostname }}'
-
+  register: something
 - set_fact:
     one_fact: "{{ openstack_servers | list }}"
+    two_fact: "{{ something | list }}"
 
-- debug: var=one_fact.metadata
+- debug: var=something
