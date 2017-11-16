@@ -14,7 +14,6 @@
         depl_ansible: item.metadata.depl_ansible
       with_items:
         - "{{ something.ansbile_facts.openstack_servers }}"
-    
 
   roles:
 #    - { role: load_vars}
