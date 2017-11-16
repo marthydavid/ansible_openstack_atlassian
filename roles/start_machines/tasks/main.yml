@@ -17,6 +17,6 @@
   wait_for:
     host: '{{ item.public_v4 }}'
     port: 22
-  when: item.vm_state == "active" item.name == machinename
+  when: item.vm_state == "active" and item.name == machinename
   with_items:
     - '{{ openstack_servers }}'
