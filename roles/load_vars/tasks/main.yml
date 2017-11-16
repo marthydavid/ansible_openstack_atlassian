@@ -1,8 +1,8 @@
 ---
 
 - name: get info
-  delegate_to: localhost
-  os_server_facts:
+  local_action:
+    module: os_server_facts
     server: '{{ ansible_hostname }}'
 
 - set_fact:
