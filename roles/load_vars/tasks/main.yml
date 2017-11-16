@@ -5,8 +5,10 @@
     server: '{{ ansible_hostname }}'
   register: something
 - set_fact:
-    one_fact: "{{ openstack_servers | list }}"
-    two_fact: "{{ something | list }}"
+    depl_ansible: item.metadata.depl_ansible
+  with_items:
+    - "{{ something.ansbile_facts.openstack_servers }}"
+    
 
 - debug: 
    var: item.1

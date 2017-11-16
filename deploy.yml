@@ -3,6 +3,19 @@
   become: yes
   gather_facts: yes
   remote_user: centos
+  tasks:
+    - name: server_facts
+      local_action:
+        module: os_server_facts
+        auth: auth_url=http://192.168.1.100:5000/v2.0/ username=demo password=Pa$$W0rd project_name=demo
+        server: '{{ ansible_hostname }}'
+      register: something
+    - set_fact:
+        depl_ansible: item.metadata.depl_ansible
+      with_items:
+        - "{{ something.ansbile_facts.openstack_servers }}"
+    
+
   roles:
 #    - { role: load_vars}
     - { role: common, when: prereq_tag is defined } 
