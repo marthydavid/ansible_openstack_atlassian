@@ -1,0 +1,5 @@
+---
+
+prereq_tag=1
+depl_ansible=1
+#depl_zabbix_agent=1
