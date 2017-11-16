@@ -9,10 +9,14 @@
   with_items:
     - '{{ machines }}'
 
-- name: Waiting for machines to get SSH access
+- name: query machines
+  os_server_facts:
+    server: '*'
+
+- name: check runnng servers ssh connectivity
   wait_for:
-    host: '{{ item.floating_ips }}'
+    host: '{{ item.public_v4 }}'
     port: 22
-  delegate_to: localhost
+  when: item.vm_state == "active" item.name == machinename
   with_items:
-    - '{{ machines }}'
+    - '{{ openstack_servers }}'
