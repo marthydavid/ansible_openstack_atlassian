@@ -1,0 +1,7 @@
+- name: asd
+  local_action: os_server_facts server='{{ ansible_hostname }}'
+
+- set_fact:
+    one_fact: "{{ openstack_servers | list }}"
+
+- debug: var=one_fact.metadata
