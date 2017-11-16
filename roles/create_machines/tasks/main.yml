@@ -15,8 +15,8 @@
       - net-id: '{{ item.network_id }}'
     meta:
       hostname: '{{ item.hostname}}'
-      tag: "{{ item.tag }}"
-      state: "{{ item.meta_state }}"
+      tag: '{{ item.tag }}'
+      state: '{{ item.meta_state }}'
     userdata:
       #cloud-config
       hostname: '{{ item.hostname }}'
