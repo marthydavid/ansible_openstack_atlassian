@@ -8,6 +8,8 @@
     one_fact: "{{ openstack_servers | list }}"
     two_fact: "{{ something | list }}"
 
-- debug: var=item
-  when: item.metadata.depl_ansible == "non"
-  with_items: "{{ something.ansible_facts.openstack_servers}}"
+- debug: var=item.1
+  when: item.metadata.depl_ansible == "1"
+  with_subelements:
+    - "{{ something.ansible_facts.openstack_servers}}"
+    - metadata
