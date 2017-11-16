@@ -1,0 +1,8 @@
+---
+
+- name: get info
+  os_server_facts:
+    server: {{ ansible_hostname }}
+
+- set_fact:
+    metadata: "{{ openstack_servers.metadata }}"
