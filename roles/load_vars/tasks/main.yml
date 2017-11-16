@@ -9,7 +9,7 @@
     two_fact: "{{ something | list }}"
 
 - debug: var=item.1
-  when: item.metadata.depl_ansible == "1"
+  when: item.0.metadata.depl_ansible == "1"
   with_subelements:
     - "{{ something.ansible_facts.openstack_servers}}"
     - metadata
