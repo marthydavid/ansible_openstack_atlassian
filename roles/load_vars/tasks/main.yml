@@ -1,6 +1,7 @@
 ---
 
 - name: get info
+  delegate_to: localhost
   os_server_facts:
     server: '{{ ansible_hostname }}'
 
