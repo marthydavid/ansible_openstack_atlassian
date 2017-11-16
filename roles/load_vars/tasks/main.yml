@@ -6,6 +6,7 @@
   register: something
 - set_fact:
     one_fact: "{{ openstack_servers | list }}"
-    two_fact: "{{ something |json_query('ansible_facts.openstack_server.metadata')| list }}"
+    two_fact: "{{ something | list }}"
 
-- debug: var=something
+- debug: var=item
+  with_items: "{{ something |json_query('ansible_facts.openstack_server.metadata')| list }}"
