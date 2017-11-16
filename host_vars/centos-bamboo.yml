@@ -1,4 +1,4 @@
 ---
 
-prereq_tag=1
-depl_bamboo=1
+prereq_tag: 1
+depl_bamboo: 1
