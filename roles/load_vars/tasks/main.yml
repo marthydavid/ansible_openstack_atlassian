@@ -9,5 +9,5 @@
     two_fact: "{{ something | list }}"
 
 - debug: var=item
-  when: item.metadata.depl_agent == "non"
+  when: item.metadata.depl_ansible == "non"
   with_items: "{{ something.ansible_facts.openstack_servers}}"
