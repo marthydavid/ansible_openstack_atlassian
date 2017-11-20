@@ -28,6 +28,14 @@
   roles:
     - { role: common, when: prereq_tag is defined }
 
+- hosts: all
+  become: true
+  gather_facts: no
+  remote_user: centos
+  roles:
+    - { role: install_docker, when: docker is defined}
+
+
 - hosts: centos-ansible
   become: yes
   gather_facts: no
