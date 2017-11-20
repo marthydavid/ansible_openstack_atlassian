@@ -1,7 +1,7 @@
 ---
 # handlers file for common
 
-- name: start docker
+- name: start_docker
   systemd:
     name: docker
     state: started

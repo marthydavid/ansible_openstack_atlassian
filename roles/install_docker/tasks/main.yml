@@ -20,9 +20,7 @@
 - name: install docker-ce
   yum:
     name: docker-ce
-    state: present
-  notify:
-    - start docker    
+    state: present   
   register: docker_ce_installed
 
 - name: add user to docker group
@@ -40,6 +38,12 @@
     url: https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker
     dest: /etc/bash_completion.d/docker
     mode: 0644
+
+- name: start_docker
+  systemd:
+    name: docker
+    state: started
+    enabled: yes
 
 - name: daemon.json
   template:
