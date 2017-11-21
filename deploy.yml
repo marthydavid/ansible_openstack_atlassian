@@ -18,6 +18,7 @@
 
 - hosts: centos-awx
   gather_facts: true
+  become: yes
   tags:
     - tower
   remote_user: centos
