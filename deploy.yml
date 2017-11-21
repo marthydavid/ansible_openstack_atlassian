@@ -25,3 +25,4 @@
   roles:
     - { role: common }
     - { role: ansible }
+    - { role: install_tower }
