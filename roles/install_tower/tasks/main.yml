@@ -1,0 +1,12 @@
+---
+
+- name: download tower setup bundle
+  get_url:
+    url: https://releases.ansible.com/ansible-tower/setup-bundle/ansible-tower-setup-bundle-latest.el7.tar.gz
+    dest: /home/centos/ansible-tower-setup-bundle-latest.el7.tar.gz
+
+- name: unarchive
+  unarchive:
+    src: /home/centos/ansible-tower-setup-bundle-latest.el7.tar.gz
+    dest: /home/centos/
+    remote_src: yes

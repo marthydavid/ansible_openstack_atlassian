@@ -1,20 +1,3 @@
-
-- hosts: all
-  become: yes
-  gather_facts: yes
-  remote_user: centos
-  tasks:
-    - name: server_facts
-      local_action:
-        module: os_server_facts
-        auth: auth_url=http://192.168.1.100:5000/v2.0/ username=demo password=Pa$$W0rd project_name=demo
-        server: '{{ ansible_hostname }}'
-      register: something
-    - set_fact:
-        depl_ansible: item.metadata.depl_ansible
-      with_items:
-        - "{{ something.ansible_facts.openstack_servers }}"
-        
 - hosts: all
   become: yes
   gather_facts: yes
@@ -31,4 +14,13 @@
     - { role: install_zabbix_agent, when: depl_zabbix_agent is defined}
     - { role: install_docker, when: depl_agent is defined}
     - { role: install_bamboo_agent, when: depl_agent is defined}
-    - { role: geerlingguy.gitlab, when: depl_gitlab is defined, gitlab_external_url: "https://centos-gitlab.marthyhome.lab",gitlab_self_signed_cert_subj: "/C=HU/ST=Pest/L=Budapest/O=MARTHYHOME/CN=gitlab",gitlab_time_zone: "UTC"}
+#    - { role: geerlingguy.gitlab, when: depl_gitlab is defined, gitlab_external_url: "https://centos-gitlab.marthyhome.lab",gitlab_self_signed_cert_subj: "/C=HU/ST=Pest/L=Budapest/O=MARTHYHOME/CN=gitlab",gitlab_time_zone: "UTC"}
+
+- hosts: centos-awx
+  gather_facts: true
+  tags:
+    - tower
+  remote_user: centos
+  roles:
+    - { role: common }
+    - { role: ansible }
