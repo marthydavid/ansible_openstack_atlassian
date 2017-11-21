@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/usr/bin/ansible-playbook main.yml -e "create=1" --limit="localhost"
+/usr/bin/ansible-playbook create_start_stop.yml -e "create=1"
