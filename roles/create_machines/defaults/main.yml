@@ -3,6 +3,7 @@
 
 atlassian_small_flavor_id: 88a3a24b-216e-4c58-8419-904daef54238
 atlassian_agent_small_flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9
+atlassian_agent_xsmall_flavor_id: dbb9149c-9814-4604-b03d-a135c6552abe
 infra_medium_flavor_id: 8a27537c-e5d2-4430-a7be-e18ee94a8c97
 image_id: 0ed374b2-4fde-4076-a9ed-91e180ab3694
 network_id: af026aac-5d4f-40aa-9e83-c451802815f6
