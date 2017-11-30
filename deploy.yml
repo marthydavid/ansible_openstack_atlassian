@@ -9,20 +9,20 @@
     - { role: install_jira, when: depl_jira is defined }
     - { role: install_bamboo, when: depl_bamboo is defined }
     - { role: install_bitbucket, when: depl_bitbucket is defined }
-#    - { role: install_lamp, when: depl_lamp is defined}
-#    - { role: install_zabbix, when: depl_zabbix is defined}
-#    - { role: install_zabbix_agent, when: depl_zabbix_agent is defined}
-#    - { role: install_docker, when: depl_agent is defined}
-#    - { role: install_bamboo_agent, when: depl_agent is defined}
-#    - { role: geerlingguy.gitlab, when: depl_gitlab is defined, gitlab_external_url: "https://centos-gitlab.marthyhome.lab",gitlab_self_signed_cert_subj: "/C=HU/ST=Pest/L=Budapest/O=MARTHYHOME/CN=gitlab",gitlab_time_zone: "UTC"}
+    - { role: install_lamp, when: depl_lamp is defined}
+    - { role: install_zabbix, when: depl_zabbix is defined}
+    - { role: install_zabbix_agent, when: depl_zabbix_agent is defined}
+    - { role: install_docker, when: depl_agent is defined}
+    - { role: install_bamboo_agent, when: depl_agent is defined}
+    - { role: geerlingguy.gitlab, when: depl_gitlab is defined, gitlab_external_url: "https://centos-gitlab.marthyhome.lab",gitlab_self_signed_cert_subj: "/C=HU/ST=Pest/L=Budapest/O=MARTHYHOME/CN=gitlab",gitlab_time_zone: "UTC"}
 
-#- hosts: centos-awx
-#  gather_facts: true
-#  become: yes
-#  tags:
-#    - tower
-#  remote_user: centos
-#  roles:
-#    - { role: common }
-#    - { role: ansible }
-#    - { role: install_tower }
+- hosts: centos-awx
+  gather_facts: true
+  become: yes
+  tags:
+    - tower
+  remote_user: centos
+  roles:
+    - { role: common }
+    - { role: ansible }
+    - { role: install_tower }
