@@ -4,9 +4,9 @@
     path: /usr/bin/pip
   register: pip
 
-- name: install pip
-  command: easy_install pip
-  when: pip.stat.exists == False
+#- name: install pip
+#  command: easy_install pip
+#  when: pip.stat.exists == False
 
 
 - name: install yum packages

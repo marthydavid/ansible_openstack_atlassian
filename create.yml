@@ -1,0 +1,9 @@
+---
+
+- hosts: localhost
+  become: no
+  tags:
+    - deploy
+  roles:
+    - { role: create_machines , when: create is defined }
+

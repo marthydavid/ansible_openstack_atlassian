@@ -1,0 +1,7 @@
+[openstack]
+kolla ansible_host=192.168.1.120
+
+[openstack:vars]
+ansible_user=marth
+ansible_become_method=sudo
+ansible_become_pass=L3n0v0Th1nk
