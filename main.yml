@@ -87,7 +87,8 @@
   become: true
   gather_facts: no
   remote_user: centos
-  tags: bamboo-agent
+  tags: 
+    - bamboo-agent
   roles:
     - { role: install_docker, when: depl_agent is defined}
 
@@ -95,7 +96,8 @@
   become: true
   gather_facts: no
   remote_user: centos
-  tags: bamboo-agent
+  tags: 
+    - bamboo-agent
   roles:
     - { role: ansible, when: depl_agent is defined}
 
@@ -103,13 +105,15 @@
   become: true
   gather_facts: no
   remote_user: centos
-  tags: bamboo-agent
+  tags: 
+    - bamboo-agent
   roles:
     - { role: install_bamboo_agent, when: depl_agent is defined}
   
 - hosts: centos-gitlab
   become: true
   remote_user: centos
-  tags: gitlab
+  tags: 
+    - gitlab
   roles:
     - {role: geerlingguy.gitlab, when: depl_gitlab is defined, gitlab_external_url: "https://centos-gitlab.marthyhome.lab",gitlab_self_signed_cert_subj: "/C=HU/ST=Pest/L=Budapest/O=MARTHYHOME/CN=gitlab",gitlab_time_zone: "UTC"}
