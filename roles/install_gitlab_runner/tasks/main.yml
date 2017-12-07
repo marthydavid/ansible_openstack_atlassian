@@ -1,0 +1,10 @@
+---
+
+- name: Install GitLab Runner Repo
+  become: yes
+  command: curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh | bash
+
+- name: Install GitLab Runner Package
+  yum:
+    name: gitlab-runner
+    state: present

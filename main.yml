@@ -117,3 +117,11 @@
     - gitlab
   roles:
     - {role: geerlingguy.gitlab, when: depl_gitlab is defined, gitlab_external_url: "https://centos-gitlab.marthyhome.lab",gitlab_self_signed_cert_subj: "/C=HU/ST=Pest/L=Budapest/O=MARTHYHOME/CN=centos-gitlab.marthyhome.lab",gitlab_time_zone: "UTC"}
+
+- hosts: centos-gitrunner*
+  become: true
+  remote_user: centos
+  tags:
+    - gitlab-runner
+  roles:
+    - { role: install_gitlab_runner, when: depl_gitlab_runner is defined}
