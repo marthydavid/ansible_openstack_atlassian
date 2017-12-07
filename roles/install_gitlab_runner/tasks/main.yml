@@ -1,8 +1,13 @@
 ---
 
+- name: Get GitLab Runner Repo
+  get_url: 
+    url: https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh
+    dest: /home/centos/script.rpm.sh
+
 - name: Install GitLab Runner Repo
-  become: yes
-  command: curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh | bash
+  become: true
+  command: bash /home/centos/script.rpm.sh
 
 - name: Install GitLab Runner Package
   yum:
