@@ -11,7 +11,7 @@ EXPOSE 80
 
 COPY httpd.conf /etc/apache2/httpd.conf
 COPY ./init.sh /init.sh
-RUN chown apache:apache /etc/apache2/httpd.conf \
+RUN chown apache:apache /etc/apache2/httpd.conf
 CMD ["sh", "-c", "/init.sh"]
 # docker run -d -v /path/to/files:/var/www/localhost/htdocs -p 80:80 apachelogs
 #   or, if you want to config log_dir dynamically:
