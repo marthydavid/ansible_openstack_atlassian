@@ -21,3 +21,5 @@ prereq_packages:
   - { name: python-devel, state: present}
   - { name: vim, state: present}
   - { name: java-1.8.0-openjdk, state: present}
+cloud_init_user_name: marth
+cloud_init_user_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDY/e1KJUiwOWUNr9RJb7DrUJqEH/8z1bvAW1XvzkNem697mDuqaZTq9D6TbVQf/NLJjSWiHlw7vhyzw+xSUExC0BDwv7CzPvRzgzpvF+AGNda7FhOElUprglxFeg08urxNOtSIzzsyBQcSyay2TfGb8Bho9/w3E88HB0UoRuUbNV8l1cXMUmkfH4WJgqzhZiJyPGzxfqtQ0gxf4MvqGbehzFtTIhlwf5Mqh/UYga7UwPgj/t/q+pKXMH4wNyAAzL0qWe5WCh99aNPyXR8DFGbg93pSdIQzNHpuyI4TS9NSOGcl+WrLFYEy8UTRIr6g7oFXJKN1EXdLFlAMC9xCB/Yp"

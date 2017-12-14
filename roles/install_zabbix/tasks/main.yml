@@ -1,14 +1,15 @@
 ---
+- include_vars
 
 - name: install prereq packages
-  yum:
+  package:
     name: '{{ item.name }}'
     state: '{{ item.state }}'
   with_items:
     - '{{ prereq_packages }}'
 
 - name: install zabbix packages
-  yum:
+  package:
     name: '{{ item.name }}'
     state: '{{ item.state }}'
   with_items:
@@ -24,21 +25,6 @@
   notify:
     httpd
 
-- name: create mysql db for zabbix
-  mysql_db:
-    name: '{{ item.name }}'
-    state: '{{ item.state }}'
-  with_items:
-    - '{{ zabbix_mysql_db }}'
-
-- name: create mysql db for zabbix
-  mysql_user:
-    name: '{{ item.name }}'
-    password: '{{ item.password }}'
-    priv: '{{ item.priv }}'
-    state: '{{ item.state }}'
-  with_items:
-    - '{{ zabbix_mysql_user }}'
 
 - name: replace some settings
   lineinfile:

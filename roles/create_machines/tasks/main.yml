@@ -19,6 +19,12 @@
     userdata:
       #cloud-config
       hostname: '{{ item.hostname }}'
+      users:
+        - name: '{{ cloud_init_user_name }}'
+          ssh-authorized-keys:
+            -  '{{ cloud_init_user_key }}'
+          sudo: ['ALL=(ALL) NOPASSWD:ALL']
+          shell: /bin/bash
   with_items:
     - '{{ machines }}'
 

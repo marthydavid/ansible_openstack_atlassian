@@ -1,0 +1,21 @@
+---
+
+prereq_packages:
+  - {name: php-cli, state: present}
+  - {name: php-common, state: present}
+  - {name: php-devel, state: present}
+  - {name: php-pear, state: present}
+  - {name: php-gd, state: present}
+  - {name: php-mbstring, state: present}
+  - {name: php-mysql, state: present}
+  - {name: php-xml, state: present}
+  - {name: "http://repo.zabbix.com/zabbix/3.4/debian/pool/main/z/zabbix-release/zabbix-release_3.4-1+wheezy_all.deb", state: present}
+  - {name: policycoreutils-python, state: present}
+  - {name: python-pgsql, state: present}
+  - {name: psycopg2, state: present}
+#  - {name: , state: present}
+
+
+zabbix_packages:
+  - {name: zabbix-server-pgsql, state: present}
+  - {name: zabbix-web-pgsql, state: present}

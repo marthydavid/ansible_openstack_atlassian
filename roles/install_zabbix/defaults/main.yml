@@ -30,7 +30,7 @@ lineinfile_php:
 zabbix_mysql_db:
   - {name: zabbixdb, state: present, target: /usr/share/doc/zabbix-server-mysql*/create.sql.gz}
 zabbix_mysql_user:
-  - {name: zabbixuser, password: Almafa12#$, priv: 'zabbixdb.*:ALL', state: present}
+  - {name: zabbixuser, password: Almafa12#$, db: zabbixdb, priv: ALL, state: present}
 
 zabbix_server_conf:
   - {path: /etc/zabbix/zabbix_server.conf, regexp: ^DBHost, line: DBHost=localhost}
