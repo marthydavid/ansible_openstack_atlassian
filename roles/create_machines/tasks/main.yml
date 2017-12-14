@@ -16,7 +16,7 @@
     meta:
       depl: '{{ item.depl_type }}'
       hostname: '{{ item.hostname}}'
-    userdata:
+    userdata: |
       #cloud-config
       hostname: '{{ item.hostname }}'
       users:
