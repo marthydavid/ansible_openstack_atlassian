@@ -1,0 +1,26 @@
+---
+# tasks file for machine
+
+- name: install docker machine
+  get_url: 
+    url: https://github.com/docker/machine/releases/download/v0.12.2/docker-machine-Linux-x86_64
+    dest: /usr/local/bin/docker-machine
+    mode: 0777
+
+- name: install bash completition
+  get_url:
+    url: https://raw.githubusercontent.com/docker/machine/master/contrib/completion/bash/docker-machine-prompt.bash
+    dest: /etc/bash_completion.d/docker-machine-prompt
+    mode: 0644
+
+- name: install bash completion 2  
+  get_url:
+    url: https://raw.githubusercontent.com/docker/machine/master/contrib/completion/bash/docker-machine-wrapper.bash
+    dest: /etc/bash_completion.d/docker-machine-wrapper
+    mode: 0644
+
+- name: install bash completion 3  
+  get_url:
+    url: https://github.com/docker/machine/raw/master/contrib/completion/bash/docker-machine.bash
+    dest: /etc/bash_completion.d/docker-machine
+    mode: 0644

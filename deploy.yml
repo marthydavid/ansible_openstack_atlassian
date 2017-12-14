@@ -13,6 +13,8 @@
     - { role: install_zabbix, when: depl_zabbix is defined}
     - { role: install_zabbix_agent, when: depl_zabbix_agent is defined}
     - { role: install_docker, when: depl_agent is defined or depl_docker is defined}
+    - { role: install_compose, when: depl_docker is defined}
+    - { role: install_machine, when: depl_docker is defined}
     - { role: install_bamboo_agent, when: depl_agent is defined}
     - { role: geerlingguy.gitlab, when: depl_gitlab is defined, gitlab_external_url: "https://centos-gitlab.marthyhome.lab",gitlab_self_signed_cert_subj: "/C=HU/ST=Pest/L=Budapest/O=MARTHYHOME/CN=gitlab",gitlab_time_zone: "UTC"}
 
