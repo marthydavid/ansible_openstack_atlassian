@@ -12,3 +12,5 @@ prerequisite_for_repo:
 yum_bash_completion:
   - { name: 'bash-completion', state: 'present'}
   - { name: 'bash-completion-extras', state: 'present'}
+
+bash_completion: "https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker"

@@ -35,7 +35,7 @@
 
 - name: add bash completion
   get_url: 
-    url: https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker
+    url: '{{ bash_completion }}'
     dest: /etc/bash_completion.d/docker
     mode: 0644
 
@@ -52,6 +52,7 @@
     owner: root
     group: root
     mode: 0600
+  when: daemon is defined
 
 - name: install docker-py
   yum:

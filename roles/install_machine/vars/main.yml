@@ -1,2 +1,6 @@
 ---
 # vars file for machine
+machine_binary: "https://github.com/docker/machine/releases/download/v0.13.0/docker-machine-Linux-x86_64"
+bash_completition_prompt: "https://raw.githubusercontent.com/docker/machine/master/contrib/completion/bash/docker-machine-prompt.bash"
+bash_completition_wrapper: "https://raw.githubusercontent.com/docker/machine/master/contrib/completion/bash/docker-machine-wrapper.bash"
+bash_completition: "https://github.com/docker/machine/raw/master/contrib/completion/bash/docker-machine.bash"
