@@ -10,6 +10,7 @@ kube_master: 8a27537c-e5d2-4430-a7be-e18ee94a8c97
 kube_minion: 88a3a24b-216e-4c58-8419-904daef54238
 centos_image_id: 0ed374b2-4fde-4076-a9ed-91e180ab3694
 fedora_image_id: d6b0f4fa-9578-4df6-a7bc-87dae4152c73
+ubuntu_image_id: 14a813ed-3efe-4eb1-8672-481dbd3e2979
 network_id: af026aac-5d4f-40aa-9e83-c451802815f6
 jira_link: https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.5.2-x64.bin
 bamboo_link: https://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-6.2.2.tar.gz
