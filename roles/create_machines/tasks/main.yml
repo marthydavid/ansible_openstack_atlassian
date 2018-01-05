@@ -31,7 +31,7 @@
           sudo: ['ALL=(ALL) NOPASSWD:ALL']
           shell: /bin/bash
   # custom-volume-size
-  volume_size: 40
+    volume_size: 40
   with_items:
     - '{{ machines }}'
 
