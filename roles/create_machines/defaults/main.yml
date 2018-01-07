@@ -1,17 +1,12 @@
 ---
 # defaults file this project
-
-atlassian_small_flavor_id: 88a3a24b-216e-4c58-8419-904daef54238
-atlassian_agent_small_flavor_id: 086ca836-1f4a-4f94-ae25-5d4b51f630a9
-atlassian_agent_xsmall_flavor_id: dbb9149c-9814-4604-b03d-a135c6552abe
-infra_medium_flavor_id: 8a27537c-e5d2-4430-a7be-e18ee94a8c97
-gitlab_agent_small: 88a3a24b-216e-4c58-8419-904daef54238
-kube_master: 8a27537c-e5d2-4430-a7be-e18ee94a8c97
-kube_minion: 88a3a24b-216e-4c58-8419-904daef54238
-centos_image_id: 0ed374b2-4fde-4076-a9ed-91e180ab3694
-fedora_image_id: d6b0f4fa-9578-4df6-a7bc-87dae4152c73
-ubuntu_image_id: 14a813ed-3efe-4eb1-8672-481dbd3e2979
-network_id: af026aac-5d4f-40aa-9e83-c451802815f6
+infra_1g: f024e0ba-7cdf-4a38-9b4d-0472d13b2308
+infra_2g: 7c634b6f-d7e4-44f1-b5bd-930a04b6d5a7
+infra_3g: 2076a802-712e-4ba6-85e3-ac8cb5216f74
+centos_image_id: 1fda8fed-66ca-42d0-b671-f01b066b9f79
+windows_image_id: 8742f0ec-ff17-4b58-b95f-51a790419b41
+ubuntu_image_id: 1f650d35-0f9d-462b-aef4-c948a511092b
+network_id_private: 385b0956-d037-4cfd-845b-6047e9bac790
 jira_link: https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.5.2-x64.bin
 bamboo_link: https://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-6.2.2.tar.gz
 bitbucket_link: https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-5.5.0-x64.bin
