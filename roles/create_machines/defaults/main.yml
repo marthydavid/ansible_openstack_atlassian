@@ -5,7 +5,7 @@ infra_2g: 7c634b6f-d7e4-44f1-b5bd-930a04b6d5a7
 infra_3g: 2076a802-712e-4ba6-85e3-ac8cb5216f74
 centos_image_id: 1fda8fed-66ca-42d0-b671-f01b066b9f79
 windows_image_id: 8742f0ec-ff17-4b58-b95f-51a790419b41
-ubuntu_image_id: 1f650d35-0f9d-462b-aef4-c948a511092b
+ubuntu_image_id: 0d42ae71-ec3b-483b-a77d-c2489dd2804f
 network_id_private: 385b0956-d037-4cfd-845b-6047e9bac790
 jira_link: https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.5.2-x64.bin
 bamboo_link: https://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-6.2.2.tar.gz
