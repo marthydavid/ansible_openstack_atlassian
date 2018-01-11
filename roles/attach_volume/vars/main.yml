@@ -1,0 +1,4 @@
+---
+# vars file for attach_volume
+machines:
+  - {machinename: windows-test, hostname: windows-test.marthyhome.lab, floating_ips: 192.168.1.201, flavor_id: '{{ infra_2g }}', network_id: '{{ network_id_private }}', state: present, depl_type: awx, image_id: '{{ windows_image_id }}', disk_state: present, disk_name: windows-test-data, disk_size: 20, disk_device: "/dev/vdb"}

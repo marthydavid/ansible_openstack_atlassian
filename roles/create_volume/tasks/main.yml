@@ -1,0 +1,8 @@
+- name: Create volume if needed
+  os_volume:
+    state: '{{ item.disk_state }}'
+    display_name: '{{ item.disk_name }}'
+    size: '{{ item.disk_size }}'
+  when: item.disk_name is defined
+  with_items: 
+    - '{{ machines }}'
