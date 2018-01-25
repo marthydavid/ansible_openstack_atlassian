@@ -5,10 +5,10 @@
   tags:
     - deploy
   roles:
-    - { role: create_volume}
+#    - { role: create_volume}
     - { role: create_machines , when: create is defined }
-    - { role: attach_volume}
-    - { role: start_machines, when: server_action == "start" or server_action == "stop" and server_action is defined and machinename is defined}
+#    - { role: attach_volume}
+#    - { role: start_machines, when: server_action == "start" or server_action == "stop" and server_action is defined and machinename is defined}
   tasks:
     - name: refresh inventory
       meta: refresh_inventory
