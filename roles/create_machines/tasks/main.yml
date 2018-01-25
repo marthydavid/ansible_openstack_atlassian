@@ -30,10 +30,10 @@
       #      -  '{{ cloud_init_user_key }}'
       #    sudo: ['ALL=(ALL) NOPASSWD:ALL']
       #    shell: /bin/bash
-      {% raw %}
+      #{% raw %}
       #ps1_sysnative
-      Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1')) -SkipNetworkProfileCheck
-      {% endraw %}
+      #Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1')) -SkipNetworkProfileCheck
+      #{% endraw %}
       timeout: 360
   with_items:
     - '{{ machines }}'
