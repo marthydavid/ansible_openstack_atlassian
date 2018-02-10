@@ -35,11 +35,6 @@
       #Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1')) -SkipNetworkProfileCheck
       #{% endraw %}
       package_upgrade: true
-      packages:
-        - python2.7
-        - python-minimal
-        - python2
-        - python-simplejson
     timeout: 360
   with_items:
     - '{{ machines }}'
