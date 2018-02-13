@@ -18,6 +18,7 @@
     userdata: |
       #cloud-config
       hostname: '{{ item.userdata.hostname }}'
+      package_update: true
       package_upgrade: '{{ item.userdata.package_upgrade }}'
       users:
         - name: '{{ item.userdata.username }}'
