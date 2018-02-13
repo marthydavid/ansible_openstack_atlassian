@@ -41,7 +41,7 @@
 {% endif %}
     timeout: 360
   with_items:
-    - '{{ machines }}'
+    - '{{ machines2 }}'
 
 - name: query machines
   os_server_facts:
