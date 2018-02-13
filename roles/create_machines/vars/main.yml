@@ -23,4 +23,5 @@ machines2:
     userdata:
       hostname: 'ubuntu.marthyhome.lab'
       package_upgrade: 'true'
+      username: 'marth'
 
