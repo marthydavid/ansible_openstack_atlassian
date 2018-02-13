@@ -28,6 +28,6 @@
   wait_for:
     host: '{{ item.public_v4 }}'
     port: 22
-  when: item.vm_state == "active" and item.public_v4 != ""
+  when: item.vm_state == "active" and item.public_v4 != "" and item.image.net !="Centos_7_1708"
   with_items:
     - '{{ openstack_servers }}'
