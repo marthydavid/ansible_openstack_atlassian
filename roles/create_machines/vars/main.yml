@@ -26,7 +26,7 @@ machines2:
       username: 'marth'
 
   - name: ubuntu2
-    floating_ips: 192.168.1.218
+    floating_ips: 192.168.1.213
     flavor_id: '{{ infra_3g }}'
     network_id: '{{ network_id_private }}'
     state: present
