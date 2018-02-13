@@ -15,17 +15,7 @@
       - net-id: '{{ item.network_id }}'
     meta:
       depl_type: '{{ item.meta.depl_type }}'
-    userdata: |
-      #cloud-config
-      hostname: '{{ item.userdata.hostname }}'
-      package_update: true
-      package_upgrade: '{{ item.userdata.package_upgrade }}'
-      users:
-        - name: '{{ item.userdata.username }}'
-          ssh-authorized-keys:
-            - '{{ cloud_init_user_key }}'
-          sudo: ['ALL=(ALL) NOPASSWD:ALL']
-          shell: /bin/bash
+    userdata: '{{ userdata}}'
     timeout: 360
   with_items:
     - '{{ machines2 }}'
