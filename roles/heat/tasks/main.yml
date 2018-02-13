@@ -1,0 +1,11 @@
+- name: Template out heatfile
+  local_action: true
+  template:
+    dest: heat.yml # required. Location to render the template to on the remote machine.
+    src: heat.yml # required. Path of a Jinja2 formatted template on the Ansible controller. This can be a relative or absolute path.
+    
+#- name: Start up with heat
+#  os_stack:
+#    name: undefined # required. Name of the stack that should be created, name could be char and digit, no space
+#    template: None # not required. Path of the template file to use for the stack creation
+#    wait: yes # not required. choices: yes;no. Should ansible wait until the requested resource is complete.

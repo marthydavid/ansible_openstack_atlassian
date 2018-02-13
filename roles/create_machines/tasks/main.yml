@@ -13,12 +13,9 @@
     security_groups: default
     nics:
       - net-id: '{{ item.network_id }}'
-#{% if item.meta is defined %}
     meta:
       depl_type: '{{ item.meta.depl_type }}'
-#{% endif %}
-#{% if item.userdata is defined %}
-      userdata: |
+    userdata: |
       #cloud-config
       hostname: '{{ item.userdata.hostname }}'
       #users:
@@ -36,9 +33,7 @@
       #ps1_sysnative
       #Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1')) -SkipNetworkProfileCheck
       #{% endraw %}
-
       package_upgrade: '{{ item.userdata.package_upgrade }}'
-#{% endif %}
     timeout: 360
   with_items:
     - '{{ machines2 }}'
