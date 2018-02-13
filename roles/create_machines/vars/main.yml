@@ -17,6 +17,7 @@ machines2:
     network_id: '{{ network_id_private }}'
     state: present
     image_id: 'ae7303b5-7bb4-4fb5-9e61-58508c6475f5'
+    machinename: atomic
     meta:
       depl_type: atomic
     userdata:
