@@ -24,6 +24,8 @@
         - name: '{{ item.userdata.username }}'
           ssh-authorized-keys:
             - '{{ cloud_init_user_key }}'
+          sudo: ['ALL=(ALL) NOPASSWD:ALL']
+          shell: /bin/bash
     timeout: 360
   with_items:
     - '{{ machines2 }}'

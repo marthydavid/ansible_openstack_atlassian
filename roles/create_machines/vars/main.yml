@@ -25,3 +25,18 @@ machines2:
       package_upgrade: 'true'
       username: 'marth'
 
+  - name: ubuntu2
+    floating_ips: 192.168.1.218
+    flavor_id: '{{ infra_3g }}'
+    network_id: '{{ network_id_private }}'
+    state: present
+    image_id: '{{ ubuntu_image_id }}'
+    machinename: ubuntu
+    meta:
+      depl_type: ubuntu
+    userdata:
+      hostname: 'ubuntu2.marthyhome.lab'
+      package_upgrade: 'true'
+      username: 
+        - 'marth'
+        - 'ubuntu'
