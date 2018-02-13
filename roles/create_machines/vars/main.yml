@@ -23,7 +23,7 @@ machines2:
 
 userdata: |
   hostname: 'ubuntu2.marthyhome.lab'
-  package_upgrade: 'true'
+  package_update: 'true'
   users:
     - name: 'marth'
       ssh-authorized-keys:
