@@ -1,8 +1,9 @@
 ---
 # defaults file this project
-infra_1g: f024e0ba-7cdf-4a38-9b4d-0472d13b2308
-infra_2g: 7c634b6f-d7e4-44f1-b5bd-930a04b6d5a7
-infra_3g: 2076a802-712e-4ba6-85e3-ac8cb5216f74
+infra_1g: 'f024e0ba-7cdf-4a38-9b4d-0472d13b2308'
+infra_2g: '7c634b6f-d7e4-44f1-b5bd-930a04b6d5a7'
+infra_3g: '2076a802-712e-4ba6-85e3-ac8cb5216f74'
+infra_8g: 'dff01397-4a02-4a42-a50c-a8f555ad865c'
 m1_large: '4'
 centos_image_id: 1fda8fed-66ca-42d0-b671-f01b066b9f79
 windows_image_id: 8742f0ec-ff17-4b58-b95f-51a790419b41
