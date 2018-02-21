@@ -24,10 +24,10 @@
   os_server_facts:
     server: '*'
 
-- name: check runnng servers ssh connectivity
-  wait_for:
-    host: '{{ item.public_v4 }}'
-    port: 22
-  when: item.vm_state == "active" and item.public_v4 != ""
-  with_items:
-    - '{{ openstack_servers }}'
+#- name: check runnng servers ssh connectivity
+#  wait_for:
+#    host: '{{ item.public_v4 }}'
+#    port: 22
+#  when: item.vm_state == "active" and item.public_v4 != ""
+#  with_items:
+#    - '{{ openstack_servers }}'

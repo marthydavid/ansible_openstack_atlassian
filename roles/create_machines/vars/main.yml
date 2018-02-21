@@ -9,4 +9,3 @@ machines:
 #  - {machinename: windows-test, hostname: windows-test.marthyhome.lab, floating_ips: 192.168.1.214, flavor_id: '{{ m1_large }}', network_id: '{{ network_id_private }}', state: present, depl_type: windows, image_id: '{{ windows_image_id }}' }
   - {machinename: ad01, hostname: ad01.marthyhome.lab, floating_ips: 192.168.1.212, flavor_id: '{{ infra_8g }}', network_id: '{{ network_id_private }}', state: present, depl_type: windows, image_id: '{{ windows_image_id }}' }
   - {machinename: sccm01, hostname: sccm01.marthyhome.lab, floating_ips: 192.168.1.213, flavor_id: '{{ infra_8g }}', network_id: '{{ network_id_private }}', state: present, depl_type: windows, image_id: '{{ windows_image_id }}' }
-
