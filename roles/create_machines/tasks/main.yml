@@ -14,11 +14,11 @@
     nics:
       - net-id: '{{ item.network_id }}'
     meta:
-      depl_type: '{{ item.meta.depl_type }}'
-    userdata: '{{ userdata}}'
+      depl_type: '{{ item.depl_type }}'
+#    userdata: '{{ userdata }}'
     timeout: 360
   with_items:
-    - '{{ machines2 }}'
+    - '{{ machines }}'
 
 - name: query machines
   os_server_facts:
@@ -28,6 +28,6 @@
   wait_for:
     host: '{{ item.public_v4 }}'
     port: 22
-  when: item.vm_state == "active" and item.public_v4 != "" and item.image.name !="Centos_7_1708"
+  when: item.vm_state == "active" and item.public_v4 != ""
   with_items:
     - '{{ openstack_servers }}'
