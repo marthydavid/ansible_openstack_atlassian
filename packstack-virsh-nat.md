@@ -1,7 +1,7 @@
 # Install Steps
 ```
 echo "`whoami` ALL=(ALL) NOPASSWD:ALL"|sudo  tee /etc/sudoers.d/`whoami`
-sudo yum update -y && yum install -y tmux vim
+sudo yum update -y && sudo yum install -y tmux vim
 printf "LANG=en_US.utf-8\nLC_ALL=en_US.utf-8" | sudo tee /etc/environment
 printf "DEVICE=eth0\nNAME=eth0\nONBOOT=yes\nBOOTPROTO=static\nIPADDR=192.168.200.43\nNETMASK=255.255.255.0\nGATEWAY=192.168.200.1\nDNS1=192.168.200.1\nDNS2=8.8.8.8" | sudo tee /etc/sysconfig/network-scripts/ifcfg-eth0
 sudo -i
