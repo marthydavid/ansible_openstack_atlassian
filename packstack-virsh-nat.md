@@ -36,8 +36,7 @@ openstack project create --enable demo
 openstack user create --project demo --password Almafa12 --email demo@localhost --enable demo
 ```
 
-### At this stage you need to add manually the demo user to demo project from horizon with admin user
-### after that you could move on in the same shell
+### At this stage you need to add manually the demo user to demo project from horizon with admin user, after that you could move on in the same shell
 
 ```bash
 export OS_USERNAME=demo
