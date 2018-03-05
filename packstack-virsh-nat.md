@@ -1,5 +1,6 @@
 # Install Steps
-```
+
+```bash
 echo "`whoami` ALL=(ALL) NOPASSWD:ALL"| sudo tee /etc/sudoers.d/`whoami`
 sudo yum update -y && sudo yum install -y tmux vim
 printf "LANG=en_US.utf-8\nLC_ALL=en_US.utf-8" | sudo tee /etc/environment
@@ -24,8 +25,9 @@ sed -i -e 's/CONFIG_PROVISION_DEMO=y/CONFIG_PROVISION_DEMO=n/g' allinone-nat.cfg
 time packstack --answer-file=allinone-nat.cfg
 ```
 
-# After Installation
-```
+## After Installation
+
+```bash
 . ~/keystonerc_admin
 neutron net-create external_network --provider:network_type flat --provider:physical_network extnet  --router:external
 neutron subnet-create --name public_subnet --enable_dhcp=False --allocation-pool=start=192.168.200.200,end=192.168.200.220 --gateway=192.168.200.1 external_network 192.168.200.0/24
@@ -33,9 +35,11 @@ curl http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img | glanc
 openstack project create --enable demo
 openstack user create --project demo --password Almafa12 --email demo@localhost --enable demo
 ```
+
 ### At this stage you need to add manually the demo user to demo project from horizon with admin user
 ### after that you could move on in the same shell
-```
+
+```bash
 export OS_USERNAME=demo
 export OS_TENANT_NAME=demo
 export OS_PASSWORD=Almafa12
