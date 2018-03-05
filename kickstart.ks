@@ -21,6 +21,6 @@ logvol / --fstype xfs --name=lv01 --vgname=rootvg01 --size=1 --grow
 
 rootpw --iscrypted $1$QzgTdyYa$j0EYn2mFTenYoo9PWCqx60
 
-%packages --nobase --ignoremissing
+%packages --ignoremissing
 @core
 %end
