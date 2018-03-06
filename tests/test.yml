@@ -8,7 +8,6 @@
     - { role: create_machines }
     - { role: create_volume }
     - { role: grafana }
-    - { role: heat }
     - { role: install_bamboo }
     - { role: install_bamboo_agent }
     - { role: install_bitbucket }
