@@ -1,0 +1,16 @@
+pipelines:
+  default:
+    - step:
+        name: Test with Centos7
+        image: marthydavid/ansible_lint:centos7
+        script:
+          - printf '[defaults]\nroles_path=./roles/' >ansible.cfg
+          - ansible-lint tests/test.yml
+          - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
+    - step:
+        name: Test with Alpine
+        image: marthydavid/ansible_lint:alpine
+        script:
+          - printf '[defaults]\nroles_path=./roles/' >ansible.cfg
+          - ansible-lint tests/test.yml
+          - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
