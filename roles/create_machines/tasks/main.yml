@@ -8,7 +8,7 @@
     key_name: MARTHY-T430
     wait: yes
     flavor: '{{ item.flavor_id }}'
-    floating_ips: 
+    floating_ips:
       - '{{ item.floating_ips }}'
     security_groups: default
     nics:

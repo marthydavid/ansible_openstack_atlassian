@@ -2,8 +2,22 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - { role: ansible}
-    - { role: attach_volume}
+    - { role: ansible }
+    - { role: attach_volume }
     - { role: common }
-    - { role: create_machines}
-    - { role: create_volume}
+    - { role: create_machines }
+    - { role: create_volume }
+    - { role: grafana }
+    - { role: heat }
+    - { role: install_bamboo }
+    - { role: install_bamboo_agent }
+    - { role: install_bitbucket }
+    - { role: install_gitlab }
+    - { role: install_gitlab_runner }
+    - { role: install_jira }
+    - { role: install_lamp }
+    - { role: install_tower }
+    - { role: install_zabbix }
+    - { role: install_zabbix_agent }
+    - { role: load_vars }
+    - { role: start_machines }
