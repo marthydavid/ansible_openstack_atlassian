@@ -5,3 +5,5 @@
     - { role: ansible}
     - { role: attach_volume}
     - { role: common }
+    - { role: create_machines}
+    - { role: create_volume}
