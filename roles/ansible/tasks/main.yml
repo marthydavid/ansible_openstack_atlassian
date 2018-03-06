@@ -13,7 +13,6 @@
   yum:
     name: '{{ item.name }}'
     state: '{{ item.state}}'
-    
   with_items:
     - '{{ packages }}'
 
@@ -41,4 +40,3 @@
   yum:
     name: apache-maven
     state: present
-    

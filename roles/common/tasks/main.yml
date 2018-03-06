@@ -1,6 +1,6 @@
 ---
 
-- name: install prereq packages 
+- name: install prereq packages
   yum:
     name: '{{ item.name }}'
     state: '{{ item.state }}'
