@@ -15,7 +15,7 @@ yum install -y epel-release
 yum install -y yum-utils
 yum install -y centos-release-openstack-pike
 yum-config-manager --enable openstack-pike
-yum update -y 
+yum update -y
 yum install -y openstack-packstack
 packstack --gen-answer-file=allinone-nat.cfg
 sed -i -e 's/CONFIG_DEFAULT_PASSWORD=/CONFIG_DEFAULT_PASSWORD=Almafa12/g' allinone-nat.cfg
