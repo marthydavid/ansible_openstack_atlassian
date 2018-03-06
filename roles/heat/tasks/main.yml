@@ -1,8 +1,8 @@
 - name: Template out heatfile
   local_action: true
   template:
-    dest: heat.yml # required. Location to render the template to on the remote machine.
-    src: heat.yml # required. Path of a Jinja2 formatted template on the Ansible controller. This can be a relative or absolute path.
+    dest: heat.yml 
+    src: heat.yml 
     
 #- name: Start up with heat
 #  os_stack:
