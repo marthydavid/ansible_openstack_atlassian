@@ -1,7 +1,7 @@
 # Kolla Recreate
 
 ```bash
-echo "`whoami` ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/`wohami`
+echo "`whoami` ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/`whoami`
 sudo yum install -y epel-release     \
                     python-pip       \
                     python-devel     \
