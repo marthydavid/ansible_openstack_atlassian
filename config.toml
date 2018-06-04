@@ -1,0 +1,36 @@
+concurrent = 10
+
+[[runners]]
+executor = "docker+machine"
+limit = 10
+[runners.docker]
+  image = "ruby:2.1"
+[runners.machine]
+  IdleCount = 1
+  MachineDriver = "openstack"
+  MachineName = "auto-scale-runners-%s"
+  MachineOptions = [
+      "openstack-domain-name=Default",
+      "openstack-tenant-name=demo",
+      "openstack-username=demo",
+      "openstack-region-name=RegionOne",
+      "openstack-password=Almafa12",
+      "openstack-floatingip-pool=public",
+      "openstack-auth-url='http://192.168.1.100:5000/v2.0'",
+      "openstack-flavor-id=7c634b6f-d7e4-44f1-b5bd-930a04b6d5a7",
+      "openstack-image-id=1fda8fed-66ca-42d0-b671-f01b066b9f79",
+      "openstack-keypair-name=MARTHY-T430",
+      "openstack-net-id=385b0956-d037-4cfd-845b-6047e9bac790",
+      "openstack-sec-groups=default",
+      "openstack-ssh-user=centos",
+      "openstack-active-timeout=300",
+      "openstack-insecure=true",
+      "engine-registry-mirror=http://192.168.1.125:6000"
+  ]
+[runners.cache]
+  Type = "s3"
+  ServerAddress = "192.168.1.125:9005"
+  AccessKey = "EWL2WZ26LQIKGF4R1ORO"
+  SecretKey = "HDVhi5qf0RgqaRj2uRD2dGpQ68fZMZ7OfhbDndX0"
+  BucketName = "runner"
+  Insecure = true

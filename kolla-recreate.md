@@ -2,18 +2,18 @@
 
 ```bash
 echo "`whoami` ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/`whoami`
-sudo yum install -y epel-release     \
-                    python-pip       \
+sudo yum install -y epel-release   &&\
+sudo yum install -y python-pip       \
                     python-devel     \
                     libffi-devel     \
                     gcc              \
                     openssl-devel    \
                     ansible          \
                     ntp              \
-                    libselinux-python
+                    libselinux-python 
 sudo systemctl enable ntpd.service
 sudo systemctl start ntpd.service
-sudo pip install -U pip
+#sudo pip install -U pip
 sudo pip install kolla-ansible
 sudo cp -r /usr/share/kolla-ansible/etc_examples/kolla /etc/kolla/
 sudo cp /usr/share/kolla-ansible/ansible/inventory/* .
