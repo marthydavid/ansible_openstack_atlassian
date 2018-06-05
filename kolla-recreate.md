@@ -1,5 +1,7 @@
 # Kolla Recreate
 
+## CentOS
+
 ```bash
 echo "`whoami` ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/`whoami`
 sudo yum install -y epel-release   &&\
@@ -50,7 +52,7 @@ sudo yum versionlock docker && \
 sudo yum versionlock docker-engine
 ```
 
-##Ubuntu
+## Ubuntu
 
 ```bash
 echo "`whoami` ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/`whoami`
